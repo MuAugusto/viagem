@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   Map, 
   Calendar, 
@@ -191,7 +191,7 @@ const dataViagem = {
 
 // --- COMPONENTES ---
 
-const TabButton = ({ active, onClick, icon: Icon, label }) => (
+const TabButton = ({ active, onClick, icon: Icon, label }: { active: boolean; onClick: () => void; icon: React.ElementType; label: string }) => (
   <button
     onClick={onClick}
     className={`flex-1 py-4 flex flex-col items-center justify-center gap-1 border-b-4 transition-colors ${
@@ -205,7 +205,7 @@ const TabButton = ({ active, onClick, icon: Icon, label }) => (
   </button>
 );
 
-const Card = ({ children, className = "" }) => (
+const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <div className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}>
     {children}
   </div>
@@ -295,7 +295,7 @@ const ViewGuia = () => (
   </div>
 );
 
-const ViewRoteiroList = ({ onSelectDay }) => (
+const ViewRoteiroList = ({ onSelectDay }: { onSelectDay: (dia: number) => void }) => (
   <div className="space-y-3 pb-20 animate-fade-in">
     <div className="bg-rose-50 rounded-xl p-4 mb-6 border border-rose-100 flex items-center gap-4">
       <Heart className="text-rose-500 shrink-0" size={32} />
@@ -326,7 +326,7 @@ const ViewRoteiroList = ({ onSelectDay }) => (
   </div>
 );
 
-const ViewDiaDetalhe = ({ dia, onBack }) => {
+const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) => {
   const info = dataViagem.roteiro.find(d => d.dia === dia);
   if (!info) return null;
 
@@ -390,7 +390,7 @@ const ViewDiaDetalhe = ({ dia, onBack }) => {
 // --- APP PRINCIPAL ---
 export default function App() {
   const [activeTab, setActiveTab] = useState('roteiro');
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans max-w-2xl mx-auto shadow-2xl relative">
