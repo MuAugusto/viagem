@@ -359,11 +359,13 @@ const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) =>
       </div>
 
       <div className="space-y-4">
-        {blocos.map((bloco, idx) => (
+        {blocos.map((bloco, idx) => {
+          const BlocoIcon = bloco.icon;
+          return (
           <Card key={idx} className="p-4 border-l-4" style={{ borderLeftColor: 'currentColor' }}>
             <div className={`flex items-start gap-3 ${bloco.color}`}>
               <div className={`p-2 rounded-lg ${bloco.bg} shrink-0`}>
-                <bloco.icon size={20} />
+                <BlocoIcon size={20} />
               </div>
               <div>
                 <h4 className="font-bold text-gray-800 text-sm uppercase tracking-wider mb-1">{bloco.label}</h4>
@@ -371,7 +373,8 @@ const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) =>
               </div>
             </div>
           </Card>
-        ))}
+          );
+        })}
 
         {info.obs && (
           <div className="mt-6 bg-gray-800 text-gray-50 rounded-xl p-4 flex gap-3 shadow-lg">
