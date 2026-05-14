@@ -47,16 +47,18 @@ const dataViagem = {
   roteiro: [
     {
       dia: 1,
+      imagem: "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=600&auto=format&fit=crop",
       titulo: "Microcentro leve + San Telmo de domingo",
-      manha: "Aterrissagem e Uber do aeroporto diretamente para o apartamento na Suipacha 1211, Retiro. Após o check-in e alocação das bagagens, o casal deve realizar um breve descanso para restauração de energia.",
-      almoco: "Restaurante principal: Santos Manjares (Calle Paraguay 938). Localizado a escassos minutos de caminhada da Suipacha 1211. Este é um estabelecimento de cortes de carne excelentes a preços justos, introduzindo o paladar à parrilla argentina sem o peso de um protocolo extremamente formal de lua de mel.\n\nAlternativa de restaurante: Pizzería El Cuartito (Talcahuano 937), oferecendo a experiência vibrante e calorosa das clássicas empanadas argentinas e pizzas de massa alta.",
+      manha: "Aterrissagem e Uber do aeroporto diretamente para o apartamento na Suipacha, Retiro. Após o check-in e alocação das bagagens, o casal deve realizar um breve descanso para restauração de energia.",
+      almoco: "Restaurante principal: Santos Manjares (Calle Paraguay 938). Localizado a escassos minutos de caminhada daSuipacha . Este é um estabelecimento de cortes de carne excelentes a preços justos, introduzindo o paladar à parrilla argentina sem o peso de um protocolo extremamente formal de lua de mel.\n\nAlternativa de restaurante: Pizzería El Cuartito (Talcahuano 937), oferecendo a experiência vibrante e calorosa das clássicas empanadas argentinas e pizzas de massa alta.",
       tarde: "Caminhada contemplativa pela icônica Calle Florida em direção ao Obelisco. A transição da Suipacha para a Calle Florida é uma descida suave rumo ao eixo comercial histórico de Buenos Aires. Este momento serve para absorver o ritmo da cidade, observar a arquitetura eclética e adentrar o suntuoso edifício das Galerías Pacífico, cuja cúpula central exibe magníficos murais afrescados.\n\nCompras / Logística (Obrigatório): Parada estratégica na agência Western Union localizada no interior das Galerías Pacífico (Av. Córdoba 550).\n\nInstruções: Uma vez que o desembarque ocorre em um domingo, a quase totalidade das casas de câmbio de rua e pequenas agências da Western Union encontram-se fechadas. A filial dentro deste shopping não apenas opera aos domingos (das 10:00 às 20:00), mas também detém vastas reservas de dinheiro em espécie e oferece o amparo da segurança privada do centro comercial.\n\nFila e Dicas: Pode haver uma fila de cerca de 30 minutos. É imperativo portar o passaporte físico original (cópias não são aceitas) e o número MTCN da transferência. Sugere-se que um aguarde na fila enquanto o outro observa a arquitetura ou adquire um café nas proximidades.",
       gelato: "Cadore , na Av. Corrientes 1695, é a parada mais simbólica para fechar o primeiro dia; Alternativa próxima e mais “leve”: uma Rapanui da cidade.",
       noite: "Jantar recomendado: Pizzería Guerrín (Avenida Corrientes 1368). Símbolo supremo da identidade urbana portenha.\n\nPasseio noturno opcional: Caminhada pela Avenida Corrientes sob as luzes neon, admirando as fachadas dos teatros de revista em direção ao Obelisco iluminado, capturando a primeira grande fotografia noturna da lua de mel.",
-      obs: "Melhor forma de transporte: Exclusivamente a pé. Todo o perímetro da Suipacha 1211, Calle Florida, Galerías Pacífico e Avenida Corrientes forma um circuito contíguo, plano e vibrante."
+      obs: "Melhor forma de transporte: Exclusivamente a pé. Todo o perímetro daSuipacha , Calle Florida, Galerías Pacífico e Avenida Corrientes forma um circuito contíguo, plano e vibrante."
     },
     {
       dia: 2,
+      imagem: "https://images.unsplash.com/photo-1612294037637-ec328d0e075e?q=80&w=600&auto=format&fit=crop",
       titulo: "Recoleta clássica + livraria + arte",
       manha: "Comece pela Biblioteca Nacional Mariano Moreno , que atende presencialmente em dias úteis de 9h às 18h . Dali, siga para o El Ateneo Grand Splendid , na Av. Santa Fe 1860; a livraria funciona de segunda a sábado, 9h às 21h , e domingo, 11h às 21h . Esse é um dia perfeito para caminhar com calma, porque tudo fica muito bem conectado em Recoleta.",
       almoco: "Almoce na própria Recoleta, de preferência algo que não roube energia do passeio\nRestaurante: El Sanjuanino .",
@@ -67,6 +69,7 @@ const dataViagem = {
     },
     {
       dia: 3,
+      imagem: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=600&auto=format&fit=crop",
       titulo: "Palermo verde + Jardim Japonês + Planetário",
       manha: "Comece pelo Jardín Japonés , que fica em Palermo e abre todos os dias de 10h às 18h45 . Logo depois, emende no Planetario Galileo Galilei , que trabalha com agenda e tickets; a própria página oficial orienta a consultar a programação, então a melhor decisão é verificar a função do dia e encaixar conforme a agenda da semana da viagem. Esse dia funciona muito bem pela manhã e começo da tarde, porque a região é verde e bonita para caminhar.",
       almoco: "Fique em Palermo e almoce sem pressa. A ideia aqui é um almoço com varanda, jardim ou vista para o parque, porque esse é um dos dias mais “lua de mel” do roteiro. Se estiverem com apetite leve, guardem energia para o fim da tarde.",
@@ -77,6 +80,7 @@ const dataViagem = {
     },
     {
       dia: 4,
+      imagem: "https://images.unsplash.com/photo-1507812984078-917a29406523?q=80&w=600&auto=format&fit=crop",
       titulo: "Centro histórico + Teatro Colón + tango da noite",
       manha: "Faça o eixo Plaza de Mayo + Casa Rosada . O Museu da Casa Rosada abre quarta a domingo e feriados, das 10h às 18h ; então a quarta-feira é o encaixe ideal. Depois, caminhem pelo centro histórico sem pressa, com a Catedral e o entorno da praça.",
       almoco: "Almoce no corredor da Avenida de Mayo e deixe o café para o Tortoni. O Café Tortoni funciona todos os dias de 8h às 21h , e o show de tango acontece de segunda a sábado, às 18h e 20h . É um clássico absoluto, muito turístico, mas com identidade porteña real — vale mais pela atmosfera do que pela cozinha em si.",
@@ -87,6 +91,7 @@ const dataViagem = {
     },
     {
       dia: 5,
+      imagem: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop",
       titulo: "Caballito cultural + Museu Bernardino Rivadavia + La Cabrera",
       manha: "Deixe a manhã mais solta e use para ir com calma até Caballito . O ponto obrigatório aqui é o Museo de Ciencias Naturales Bernardino Rivadavia , que abre todos os dias de 14h às 19h ; por isso ele encaixa melhor depois do almoço. Esse dia fica bom para respirar um pouco fora do eixo mais turístico e ainda assim manter o roteiro bonito e inteligente.",
       almoco: "Faça um almoço leve perto de Caballito ou já perto de Palermo, dependendo do ritmo de vocês. Eu não gastaria o “cartucho” de jantar premium no almoço deste dia, porque a noite merece a La Cabrera .",
@@ -97,6 +102,7 @@ const dataViagem = {
     },
     {
       dia: 6,
+      imagem: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600&auto=format&fit=crop",
       titulo: "Belgrano + Barrio Chino + parques do norte",
       manha: "Vá para Belgrano e caminhe com calma pelo Barrio Chino , que fica entre Arribeños, Mendoza, Juramento e Montañeses . A área é uma porção bem definida do bairro, com identidade oriental forte e ótima para passeio a pé. Eu gosto desse dia para uma manhã sem pressa, com lojas, padarias, restaurantes e ambiente diferente do resto da cidade.",
       almoco: "Almoce dentro ou ao redor do Barrio Chino. Esse é um dos lugares mais autênticos para variar da parrilla e da pizza, sem perder o clima local. Se quiserem economizar, um almoço simples aqui rende melhor do que tentar transformar tudo em comida cara de bairro turístico.",
@@ -107,6 +113,7 @@ const dataViagem = {
     },
     {
       dia: 7,
+      imagem: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=600&auto=format&fit=crop",
       titulo: "Colonia del Sacramento, Uruguai",
       manha: "Saída cedo de Puerto Madero Sur , no terminal da Colonia Express em Av. Elvira Rawson de Dellepiane 155 . Para o trecho Buenos Aires–Colonia, a companhia oferece saídas, no período de 01/03/2026 a 30/11/2026 , às 8:30, 10:30, 12:50, 18:30 e 20:00 , com duração de 1h15 . Para o seu perfil, o melhor é a saída mais cedo possível, porque você ganha tempo útil na cidade uruguaia sem correr demais.",
       almoco: "Leve lanche na bolsa e use a cidade para uma refeição mais simples. Os próprios relatos de viagem que vocês trouxeram já apontam que comer lá pode pesar, então o plano mais inteligente é priorizar o passeio e controlar o gasto.",
@@ -117,6 +124,7 @@ const dataViagem = {
     },
     {
       dia: 8,
+      imagem: "https://images.unsplash.com/photo-1516483638261-f40af5ff5891?q=80&w=600&auto=format&fit=crop",
       titulo: "San Telmo profundo + Caminito de dia",
       manha: "Passeios sugeridos: A icônica passagem de paralelepípedos de Caminito no bairro operário de La Boca\n\nDica: Chegar cedo para evitar turistas",
       almoco: "Use um lugar simples e despretensioso em San Telmo. O bairro combina muito com comida de mesa corrida, bodegón ou um mercado gastronômico, e a graça é mais a atmosfera do que o luxo.\n\nRestaurantes: La Brigada, ou choripáns",
@@ -127,6 +135,7 @@ const dataViagem = {
     },
     {
       dia: 9,
+      imagem: "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?q=80&w=600&auto=format&fit=crop",
       titulo: "Puerto Madero de dia + Puente de la Mujer",
       manha: "Faça um passeio bem tranquilo por Puerto Madero , com tempo para calçadão e fotos. O Puente de la Mujer é um dos símbolos do bairro; a própria Cidade de Buenos Aires explica que ele representa um casal dançando tango. É um passeio que conversa bem com a lua de mel sem exigir esforço.\n\nUma ideia de passeio também é o Reserva Ecológica Costanera Sur",
       almoco: "Almoce por ali se quiserem conforto e praticidade. Como é uma área mais turística e mais arrumada, ela é boa para um almoço bonito, mas eu não deixaria um orçamento pesado no bairro todos os dias.",
@@ -137,6 +146,7 @@ const dataViagem = {
     },
     {
       dia: 10,
+      imagem: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop",
       titulo: "Tigre + Delta do Paraná",
       manha: "Saída para Tigre a partir de Retiro de trem. A própria Cidade de Buenos Aires descreve Tigre como um refúgio ribeirinho a cerca de 30 km da cidade , com viagem de trem em torno de 1 hora , e como porta de entrada do Delta do Paraná.",
       almoco: "Comam algo simples em Tigre ou levem lanche, para não prender o dia num almoço caro. O foco aqui é o passeio de água e verde.",
@@ -147,6 +157,7 @@ const dataViagem = {
     },
     {
       dia: 11,
+      imagem: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=600&auto=format&fit=crop",
       titulo: "ÚNICO dia de respiro",
       manha: "Nada de programa pesado. Café com calma, caminhada curta e, no máximo, um giro leve perto do hotel. Esse é o único dia pensado para descansar de verdade.",
       almoco: "Escolham algo próximo e confortável.",
@@ -156,6 +167,7 @@ const dataViagem = {
     },
     {
       dia: 12,
+      imagem: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=600&auto=format&fit=crop",
       titulo: "Parque de la Memoria + Museo Nacional de Arte Decorativo + Recoleta norte",
       manha: "Esse é o bloco novo que substitui a repetição. Comecem pelo Parque de la Memoria , que fica aberto de segunda a sexta, das 10h às 18h , e sábados, domingos e feriados, das 10h às 19h . É um espaço de reflexão, arte e vista para o rio, muito bonito para quem gosta de caminhar e quer algo mais contemplativo.",
       almoco: "Façam um almoço na faixa de Recoleta/Palermo norte ou perto da rota de volta.",
@@ -166,6 +178,7 @@ const dataViagem = {
     },
     {
       dia: 13,
+      imagem: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
       titulo: "Volta ao Brasil",
       manha: "Café da manhã sem pressa, check-out e saída com folga. Como o voo é às 18h , vocês ainda têm uma janela confortável para não acordar correndo.",
       almoco: "Almoço cedo e simples. Nada pesado antes do aeroporto.",
@@ -296,13 +309,15 @@ const ViewRoteiroList = ({ onSelectDay }) => (
       <button
         key={dia.dia}
         onClick={() => onSelectDay(dia.dia)}
-        className="w-full bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:border-rose-300 hover:shadow-md transition-all flex items-center text-left group"
+        className="w-full bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:border-rose-300 hover:shadow-md transition-all flex items-center text-left group overflow-hidden"
       >
-        <div className="bg-rose-100 text-rose-700 font-bold rounded-lg w-12 h-12 flex items-center justify-center shrink-0 mr-4 group-hover:bg-rose-600 group-hover:text-white transition-colors">
-          {dia.dia}
+        <div className="relative w-20 h-20 rounded-lg overflow-hidden shrink-0 mr-4 border border-gray-100">
+          <img src={dia.imagem} alt={dia.titulo} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <span className="text-white font-black text-lg drop-shadow-md">Dia {dia.dia}</span>
+          </div>
         </div>
         <div className="flex-1">
-          <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Dia {dia.dia}</p>
           <h3 className="font-bold text-gray-800 leading-tight">{dia.titulo}</h3>
         </div>
         <ChevronRight className="text-gray-300 group-hover:text-rose-500 transition-colors" />
@@ -333,11 +348,14 @@ const ViewDiaDetalhe = ({ dia, onBack }) => {
         Voltar para todos os dias
       </button>
 
-      <div className="mb-6">
-        <div className="inline-block bg-rose-100 text-rose-700 font-bold px-3 py-1 rounded-full text-sm mb-2">
-          Dia {info.dia}
+      <div className="mb-6 rounded-xl overflow-hidden shadow-sm relative h-56 border border-gray-200">
+        <img src={info.imagem} alt={info.titulo} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5">
+          <div className="inline-block bg-rose-600 text-white font-bold px-3 py-1 rounded-full text-xs mb-2 w-fit">
+            Dia {info.dia}
+          </div>
+          <h2 className="text-2xl font-bold text-white leading-tight drop-shadow-md">{info.titulo}</h2>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 leading-tight">{info.titulo}</h2>
       </div>
 
       <div className="space-y-4">
