@@ -205,8 +205,19 @@ const TabButton = ({ active, onClick, icon: Icon, label }: { active: boolean; on
   </button>
 );
 
-const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}>
+const Card = ({ 
+  children, 
+  className = "", 
+  style 
+}: { 
+  children: React.ReactNode; 
+  className?: string; 
+  style?: React.CSSProperties 
+}) => (
+  <div 
+    className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}
+    style={style}
+  >
     {children}
   </div>
 );
