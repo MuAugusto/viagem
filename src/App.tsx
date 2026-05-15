@@ -505,6 +505,7 @@ export default function App() {
           icon={Info}
           label="Preparativos"
         />
+        <TabButton active={activeTab === 'checklist'} onClick={() => { setActiveTab('checklist'); setSelectedDay(null); }} icon={ListTodo} label="Afazeres" />
       </nav>
 
       <style dangerouslySetInnerHTML={{__html: `
