@@ -15,7 +15,10 @@ import {
   ChevronLeft,
   MapPin,
   Clock,
-  Heart
+  Heart,
+  ListTodo, 
+  Square,
+  CheckSquare
 } from 'lucide-react';
 
 // --- DADOS DA VIAGEM ---
