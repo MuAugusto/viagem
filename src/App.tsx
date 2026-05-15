@@ -73,7 +73,7 @@ const dataViagem = {
       almoco: "Almoce na própria Recoleta, de preferência algo que não roube energia do passeio\nRestaurante: El Sanjuanino .",
       tarde: "Faça o combo Museu MALBA + Cementerio de Recoleta . O MALBA abre de segunda, quarta, quinta, sexta, sábado e domingo , com terça fechado; o horário mais confortável para vocês aqui é o início da tarde, e o museu fica em Av. Figueroa Alcorta 3415. O Cementerio de Recoleta faz visitas turísticas de 9h às 17h , com visitas guiadas gratuitas em espanhol saindo de hora em hora. Esse bloco fica muito elegante e muito argentino ao mesmo tempo.",
       gelato: "Se ainda sobrar espaço, encaixe uma Rapanui da região ou volte mais tarde para o Cadore se vocês já tiverem gostado dele. Para este dia, eu gosto de deixar o gelato como uma pausa entre o museu e o cemitério, porque ajuda a dar ritmo ao passeio.",
-      noite: "Jantar leve em Recoleta ou Retiro. Nada muito pesado, porque o dia já tem bastante conteúdo cultural. Se quiserem um fim de noite romântico, caminhem pela zona mais iluminada da Recoleta e voltem cedo.\nVer restaurante que fica em Recoleta",
+      noite: "Jantar leve em Recoleta ou Retiro. Nada muito pesado, porque o dia já tem bastante conteúdo cultural. Se quiserem um fim de noite romântico, caminhem pela zona mais iluminada da Recoleta e voltem cedo.\n\nOpções de restaurantes: ...",
       obs: "Melhor transporte: quase tudo a pé, com apoio de táxi entre MALBA e o cemitério se estiverem cansados. Cuidados: o cemitério é bonito, mas merece respeito e tempo; não tentem correr. Reservas necessárias: MALBA e El Ateneo normalmente são fáceis de encaixar sem grande drama, mas a ordem do dia deve respeitar as horas de abertura. O que vale muito: Biblioteca + El Ateneo + Recoleta"
     },
     {
@@ -81,7 +81,7 @@ const dataViagem = {
       imagem: "https://images.unsplash.com/photo-1590114174489-6186e8befc15?q=80&w=600&auto=format&fit=crop",
       titulo: "Palermo verde + Jardim Japonês + Planetário",
       manha: "Comece pelo Jardín Japonês, que fica em Palermo e abre todos os dias de 10h às 18h45 . Logo depois, emende no Planetario Galileo Galilei , que trabalha com agenda e tickets; a própria página oficial orienta a consultar a programação, então a melhor decisão é verificar a função do dia e encaixar conforme a agenda da semana da viagem. Esse dia funciona muito bem pela manhã e começo da tarde, porque a região é verde e bonita para caminhar.",
-      almoco: "Fique em Palermo e almoce sem pressa. A ideia aqui é um almoço com varanda, jardim ou vista para o parque, porque esse é um dos dias mais “lua de mel” do roteiro. Se estiverem com apetite leve, guardem energia para o fim da tarde.",
+      almoco: "Fique em Palermo e almoce sem pressa. A ideia aqui é um almoço com varanda, jardim ou vista para o parque, porque esse é um dos dias mais “lua de mel” do roteiro. Se estiverem com apetite leve, guardem energia para o fim da tarde.\n\nOpções de restaurantes: ...",
       tarde: "Façam o circuito a pé pelos Bosques de Palermo , Rosedal , Floralis Genérica e Facultad de Derecho . O Parque 3 de Febrero é livre e inclui lago, jardins e o Rosedal; a Floralis fica na Plaza de las Naciones Unidas e a Faculdade de Direito também é um ícone de Recoleta. É um bloco lindo, fotogênico e com bastante natureza para o que vocês gostam.",
       gelato: "Hoje eu colocaria Rapanui , porque ela tem casas em Retiro, Recoleta, Palermo, Belgrano e Caballito e trabalha com helados artesanais. Sabor que combina com o dia: pistache ou doce de leite . Alternativa próxima: voltar ao Cadore se quiserem fechar a tarde em Corrientes mais tarde.",
       noite: "Noite no Uptown Bar",
@@ -92,7 +92,7 @@ const dataViagem = {
       imagem: "https://images.unsplash.com/photo-1761359841098-8e84b7cf3661?q=80&w=600&auto=format&fit=crop",
       titulo: "Centro histórico + Teatro Colón + tango da noite",
       manha: "Faça o eixo Plaza de Mayo + Casa Rosada . O Museu da Casa Rosada abre quarta a domingo e feriados, das 10h às 18h ; então a quarta-feira é o encaixe ideal. Depois, caminhem pelo centro histórico sem pressa, com a Catedral e o entorno da praça.",
-      almoco: "Almoce no corredor da Avenida de Mayo e deixe o café para o Tortoni. O Café Tortoni funciona todos os dias de 8h às 21h , e o show de tango acontece de segunda a sábado, às 18h e 20h . É um clássico absoluto, muito turístico, mas com identidade porteña real — vale mais pela atmosfera do que pela cozinha em si.",
+      almoco: "Almoce no corredor da Avenida de Mayo e deixe o café para o Tortoni. O Café Tortoni funciona todos os dias de 8h às 21h , e o show de tango acontece de segunda a sábado, às 18h e 20h . É um clássico absoluto, muito turístico, mas com identidade porteña real — vale mais pela atmosfera do que pela cozinha em si.\n\nOpções de restaurantes: ...",
       tarde: "Passe pelo Teatro Colón . As visitas guiadas acontecem todos os dias , com saídas a cada 15 minutos, de 10h a 16h45 , e duração média de 50 minutos ; a bilheteria presencial funciona de segunda a sábado de 9h às 20h e domingos/feriados de 9h às 17h . Depois, siga pela área do Obelisco e da Corrientes para uma caminhada clássica de Buenos Aires.",
       gelato: "Aqui o mais natural é parar no Cadore , porque ele fica na Av. Corrientes 1695, pertinho do circuito teatral. É o gelato certo para um fim de tarde clássico. Sabor-destaque para mim neste dia: dulce de leche ou chocolate amargo .",
       noite: "A noite é do Tango Porteño. Ele fica a poucos metros do Obelisco e o site oficial mostra a experiência como jantar às 20h30 e show às 22h00, com duração de cerca de 1h30. É a escolha mais coerente para lua de mel neste roteiro porque entrega espetáculo, jantar e logística fácil no mesmo bloco",
@@ -103,7 +103,7 @@ const dataViagem = {
       imagem: "https://images.unsplash.com/photo-1588444543009-7db73c43514e?q=80&w=600&auto=format&fit=crop",
       titulo: "Museu Bernardino Rivadavia + La Cabrera",
       manha: "Deixe a manhã mais solta e use para ir com calma até Caballito . O ponto obrigatório aqui é o Museo de Ciencias Naturales Bernardino Rivadavia , que abre todos os dias de 14h às 19h ; por isso ele encaixa melhor depois do almoço. Esse dia fica bom para respirar um pouco fora do eixo mais turístico e ainda assim manter o roteiro bonito e inteligente.",
-      almoco: "Faça um almoço leve perto de Caballito ou já perto de Palermo, dependendo do ritmo de vocês. Eu não gastaria o “cartucho” de jantar premium no almoço deste dia, porque a noite merece a La Cabrera .",
+      almoco: "Faça um almoço leve perto de Caballito ou já perto de Palermo, dependendo do ritmo de vocês. Eu não gastaria o “cartucho” de jantar premium no almoço deste dia, porque a noite merece a La Cabrera .\n\nOpções de padarias: ...",
       tarde: "Visite o museu com calma e, se der vontade, alongue a caminhada com um pedacinho de parque. O museu é o mais antigo do país e tem uma coleção muito forte de paleontologia, geologia e fauna; para quem gosta de experiências memoráveis, ele encaixa bem porque foge do roteiro mais óbvio.",
       gelato: "Se estiverem próximos da Corrientes depois, voltem de novo ao Cadore ; se preferirem algo mais prático, uma Rapanui em Palermo ou Caballito resolve sem desvio. Hoje eu iria de sabor clássico, simples e seguro.",
       noite: "Aqui entra a La Cabrera , em Palermo, que funciona todos os dias de 12h às 16h e de 18h30 à 1h . É uma casa mais turística e mais cara, mas muito forte para uma noite especial; o melhor momento para reservar é com antecedência, e eu trataria esse jantar como um dos dois grandes “luxos” do roteiro. Alternativa mais econômica: dividir cortes e acompanhamentos, ou trocar por uma parrilla de bairro no mesmo perímetro de Palermo.",
@@ -128,7 +128,7 @@ const dataViagem = {
       almoco: "Leve lanche na bolsa e use a cidade para uma refeição mais simples. Os próprios relatos de viagem que vocês trouxeram já apontam que comer lá pode pesar, então o plano mais inteligente é priorizar o passeio e controlar o gasto.",
       tarde: "Passeio livre por Colonia del Sacramento : centro histórico, ruas de pedra, mirantes e pausa romântica. Em lua de mel, esse é o passeio que mais foge do óbvio e que normalmente vira lembrança forte da viagem. Eu deixaria ao menos algumas horas sem compromisso, para caminhar, sentar e aproveitar a cidade com calma.",
       gelato: "Se houver tempo no retorno a Buenos Aires, faça um gelato leve na volta. Se o dia apertar, a regra aqui é não inventar moda: Colonia já é o grande programa do dia.",
-      noite: "Jantar leve perto do hotel ou descanso total. A travessia costuma cansar um pouco, então vale mais chegar bem ao fim da noite do que tentar “aproveitar cada segundo”.",
+      noite: "Jantar leve perto do hotel ou descanso total. A travessia costuma cansar um pouco, então vale mais chegar bem ao fim da noite do que tentar “aproveitar cada segundo”.\nOpções de restaurantes: ...",
       obs: "Melhor transporte: ferry + caminhada na cidade. Cuidados: compre com antecedência e mantenha documentos à mão. Reservas necessárias: sim, principalmente se quiser a grade mais cedo. O que vale muito: esse é o melhor bate-volta do roteiro para casal."
     },
     {
@@ -137,20 +137,20 @@ const dataViagem = {
       titulo: "Caminito + Feira de San Telmo",
       manha: "Passeio cedo na icônica passagem de paralelepípedos de Caminito no bairro operário de La Boca, um bairro colorido e muito tradicional da Argentina\n\nDica: Chegar cedo para evitar turistas",
       almoco: "Use um lugar simples e despretensioso em San Telmo. O bairro combina muito com comida de mesa corrida, bodegón ou um mercado gastronômico, e a graça é mais a atmosfera do que o luxo.\n\nRestaurantes: La Brigada, ou choripáns",
-      tarde: "Passeios (Obrigatório): Feira de San Telmo. Desdobrando-se estritamente aos domingos a partir da poética e sombreada Plaza Dorrego, a feira transborda pela extensão contígua da Calle Defensa\n\nCasa da Mafalda fica aqui",
+      tarde: "Feira de San Telmo. Desdobrando-se estritamente aos domingos a partir da poética e sombreada Plaza Dorrego, a feira transborda pela extensão contígua da Calle Defensa\n\nCasa da Mafalda fica aqui",
       gelato: "Freddo (na própria unidade da Calle Defensa 995, em San Telmo).",
-      noite: "Se tiverem energia, retornem para Puerto Madero para uma caminhada noturna curta. É um fechamento muito bonito depois de um dia mais histórico e popular.",
+      noite: "Se tiverem energia, retornem para Puerto Madero para uma caminhada noturna curta. É um fechamento muito bonito depois de um dia mais histórico e popular. Ou vá para um bar secreto (como: ...), ou vá mais cedo para o hotel",
       obs: "Melhor transporte: taxi/Uber entre San Telmo e Caminito. Cuidados: La Boca rende muito mais de dia. Reservas necessárias: nenhuma para a parte de rua; só jantar, se vocês quiserem algo específico. O que vale muito: é o lado mais histórico e popular de Buenos Aires."
     },
     {
       dia: 9,
       imagem: "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?q=80&w=600&auto=format&fit=crop",
       titulo: "Puerto Madero de dia + Puente de la Mujer",
-      manha: "Faça um passeio bem tranquilo por Puerto Madero , com tempo para calçadão e fotos. O Puente de la Mujer é um dos símbolos do bairro; a própria Cidade de Buenos Aires explica que ele representa um casal dançando tango. É um passeio que conversa bem com a lua de mel sem exigir esforço.\n\nUma ideia de passeio também é o Reserva Ecológica Costanera Sur",
-      almoco: "Almoce por ali se quiserem conforto e praticidade. Como é uma área mais turística e mais arrumada, ela é boa para um almoço bonito, mas eu não deixaria um orçamento pesado no bairro todos os dias.",
+      manha: "Faça um passeio bem tranquilo por Puerto Madero , com tempo para calçadão e fotos. O Puente de la Mujer é um dos símbolos do bairro; a própria Cidade de Buenos Aires explica que ele representa um casal dançando tango. Também aproveite a manhã para visitar a Reserva Ecológica Costanera Sur",
+      almoco: "Almoce por ali se quiserem conforto e praticidade. Como é uma área mais turística e mais arrumada, ela é boa para um almoço bonito, mas eu não deixaria um orçamento pesado no bairro todos os dias.\n\nOpções de padarias: ...",
       tarde: "Continue caminhando por Puerto Madero sem meta rígida. O ideal é deixar o ritmo mais lento, porque o bairro funciona muito bem para casal, fotos e descanso visual depois dos dias mais cheios.",
       gelato: "Persicco",
-      noite: "Se vocês quiserem uma noite romântica sem show, Puerto Madero é a melhor escolha para jantar e voltar cedo. Se quiserem rever uma experiência mais “espetáculo”, esse também é um bom dia para uma segunda opção de tango, mas eu só faria isso se o orçamento permitir.",
+      noite: "Se vocês quiserem uma noite romântica sem show, Puerto Madero é a melhor escolha para jantar e voltar cedo. A noite é repleto de restaures, escolha um que vocês prefererirem, aqui estão algumas opções: ....",
       obs: "Melhor transporte: a pé + táxi/Uber. Cuidados: não precisa lotar esse dia; o charme está justamente em deixá-lo leve. Reservas necessárias: apenas se forem jantar em restaurante mais disputado. O que vale muito: é o dia mais romântico do waterfront."
     },
     {
@@ -161,7 +161,7 @@ const dataViagem = {
       almoco: "Comam algo simples em Tigre ou levem lanche, para não prender o dia num almoço caro. O foco aqui é o passeio de água e verde.",
       tarde: "Façam o passeio de barco pelo Delta e caminhem pelo centro de Tigre. Esse é o grande dia de natureza fora da cidade, e ele conversa muito bem com o perfil de vocês.",
       gelato: "Na volta, se sobrar disposição, um gelato em Buenos Aires; se não, deixem para o dia 12.",
-      noite: "Volta tranquila para o hotel e jantar simples. Observação prática: Tigre é o melhor bate-volta de natureza do roteiro e entra muito bem logo antes do único dia de respiro.\n\nRestaurante Pizzería Banchero, ou ifood",
+      noite: "Volta tranquila para o hotel e jantar simples. Observação prática: Tigre é o melhor bate-volta de natureza do roteiro e entra muito bem logo antes do único dia de respiro.\n\nRestaurante Pizzería Banchero",
       obs: "Melhor bate-volta de natureza. Entra muito bem logo antes do dia de respiro."
     },
     {
@@ -171,15 +171,15 @@ const dataViagem = {
       manha: "Nada de programa pesado. Café com calma, caminhada curta e, no máximo, um giro leve perto do hotel. Esse é o único dia pensado para descansar de verdade.",
       almoco: "Escolham algo próximo e confortável.",
       tarde: "Tarde de compras, escolham um mercado e vão comprar lembrancinhas",
-      noite: "Jantar romântico sem compromisso, ou só descanso mesmo. Aqui eu deixaria o casal livre para fazer o que der vontade na hora, sem obrigação de cumprir roteiro.",
+      noite: "Aqui caso vocês não conseguirem fazer algum passeio antecessor aproveite essa noite, ou se quiserem voltar a um passeio que gostaram muito",
       obs: "Dia pensado para descansar de verdade, sem obrigação de cumprir roteiro."
     },
     {
       dia: 12,
       imagem: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=600&auto=format&fit=crop",
       titulo: "Parque de la Memoria + Museo Nacional de Arte Decorativo + Recoleta norte",
-      manha: "Esse é o bloco novo que substitui a repetição. Comecem pelo Parque de la Memoria , que fica aberto de segunda a sexta, das 10h às 18h , e sábados, domingos e feriados, das 10h às 19h . É um espaço de reflexão, arte e vista para o rio, muito bonito para quem gosta de caminhar e quer algo mais contemplativo.",
-      almoco: "Façam um almoço na faixa de Recoleta/Palermo norte ou perto da rota de volta.",
+      manha: "Comecem pelo Parque de la Memoria , que fica aberto de segunda a sexta, das 10h às 18h , e sábados, domingos e feriados, das 10h às 19h . É um espaço de reflexão, arte e vista para o rio, muito bonito para quem gosta de caminhar e quer algo mais contemplativo.",
+      almoco: "Façam um almoço na faixa de Recoleta/Palermo norte ou perto da rota de volta. \n\nOpções de restaurantes: ...",
       tarde: "Siga para o Museo Nacional de Arte Decorativo , que abre de quarta a domingo, das 13h às 19h . Ele traz uma atmosfera de palacete e casa muito bem com um dia elegante, sem repetir MALBA nem Biblioteca. Se quiserem, fechem com uma caminhada pela Recoleta norte e Av. Alvear.",
       gelato: "Cadore no retorno ao centro ou Rapanui se estiverem mais para o lado norte. Sabor: dulce de leche .",
       noite: "Ir ao bar Florería Atlántico",
@@ -190,7 +190,7 @@ const dataViagem = {
       imagem: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
       titulo: "Volta ao Brasil",
       manha: "Café da manhã sem pressa, check-out e saída com folga. Como o voo é às 18h , vocês ainda têm uma janela confortável para não acordar correndo.",
-      almoco: "Almoço cedo e simples. Nada pesado antes do aeroporto.",
+      almoco: "Por fim um almoço nas redondezas do hotel. \n\nOpções de restaurantes: ...",
       tarde: "Saída para o aeroporto com margem de segurança. Se sobrar tempo, apenas uma última parada prática e nada mais.",
       gelato: "Se ainda couber uma despedida doce, fique com a casa mais perto do hotel. Não complica.",
       obs: "Melhor transporte: carro por app. Cuidados: trânsito e atraso de última hora. Reservas necessárias: nenhuma. O que vale ou não vale a pena: no último dia, vale sair cedo e não estressar com passeio extra."
