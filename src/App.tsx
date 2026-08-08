@@ -156,13 +156,13 @@ const dataViagem = {
     {
       dia: 10,
       imagem: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop",
-      titulo: "Tigre + Delta do Paraná",
-      manha: "Saída para Tigre a partir de Retiro de trem. A própria Cidade de Buenos Aires descreve Tigre como um refúgio ribeirinho a cerca de 30 km da cidade , com viagem de trem em torno de 1 hora , e como porta de entrada do Delta do Paraná.",
-      almoco: "Comam algo simples em Tigre ou levem lanche, para não prender o dia num almoço caro. O foco aqui é o passeio de água e verde.",
-      tarde: "Façam o passeio de barco pelo Delta e caminhem pelo centro de Tigre. Esse é o grande dia de natureza fora da cidade, e ele conversa muito bem com o perfil de vocês.",
-      gelato: "Na volta, se sobrar disposição, um gelato em Buenos Aires; se não, deixem para o dia 12.",
-      noite: "Volta tranquila para o hotel e jantar simples. Observação prática: Tigre é o melhor bate-volta de natureza do roteiro e entra muito bem logo antes do único dia de respiro.\n\nRestaurante Pizzería Banchero",
-      obs: "Melhor bate-volta de natureza. Entra muito bem logo antes do dia de respiro."
+      titulo: "Tigre + Delta do Paraná (Roteiro Completo)",
+      manha: "08:00 - Vá para a 'Estación Retiro Mitre' (procure no mapa) e pegue o 'Tren Mitre – Ramal Tigre' até a última estação (Tigre).\n\n09:15 - Desça na 'Estación Tigre' e caminhe até a 'Estación Fluvial de Tigre' (Mitre 305). Não vá para o Puerto de Frutos ainda.\n\n09:30 - Compre o passeio: OPÇÃO A (Paseo por el Delta / Excursión turística). É um barco fechado que faz um circuito sem paradas. Não pegue a lancha coletiva.\n\n10:00 às 11:30 - Passeio pelo Delta.",
+      almoco: "11:30 às 12:30 - Saindo do barco (Estación Fluvial), coloque 'Paseo Victorica' no Google Maps e vá caminhando pela margem do rio vendo barcos e construções (a parte mais bonita da cidade).\n\n12:30 às 14:00 - Almoce em um dos restaurantes do Paseo Victorica.",
+      tarde: "14:00 às 15:00 - Caminhe até o 'Museo de Arte Tigre' (fica no próprio Paseo Victorica) para tirar fotos da arquitetura linda por fora.\n\n15:00 às 17:00 - Caminhe até o 'Puerto de Frutos'. Atenção: não é porto de barcos, é um enorme mercado para comprar artesanato, decoração, produtos de madeira e lembranças.\n\n17:00 - Retorne caminhando para a Estación Tigre.",
+      gelato: "Na volta para Buenos Aires, se sobrar disposição.",
+      noite: "18:00 - Pegue o Trem Mitre na Estación Tigre sentido Retiro.\n\n19:00 - Chegada em Buenos Aires. Jantar simples (Pizzería Banchero, ou ifood) e descanso total.",
+      obs: "💡 MAPA MENTAL PRÁTICO:\n1️⃣ Retiro ↓ trem\n2️⃣ Estación Tigre ↓ mapa: Estación Fluvial\n3️⃣ Estación Fluvial ↓ barco\n4️⃣ Delta ↓ barco volta\n5️⃣ Estación Fluvial ↓ mapa: Paseo Victorica\n6️⃣ Paseo Victorica / Museu ↓ mapa\n7️⃣ Puerto de Frutos ↓ mapa\n8️⃣ Estación Tigre ↓ trem\n9️⃣ Retiro"
     },
     {
       dia: 11,
@@ -279,72 +279,10 @@ const ViewChecklist = () => {
 
 const ViewGuia = () => (
   <div className="space-y-6 pb-20 animate-fade-in">
-    {/* Reservas */}
-    <section>
-      <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <Calendar className="text-rose-600" />
-        Reservas Antecipadas
-      </h2>
-      <div className="grid gap-3 md:grid-cols-2">
-        {dataViagem.reservas.map((res, i) => (
-          <Card key={i} className="p-4 border-l-4 border-l-rose-500">
-            <h3 className="font-bold text-gray-800 text-lg">{res.nome}</h3>
-            <div className="flex items-center text-sm text-rose-600 font-medium mt-1 mb-2">
-              <Clock size={14} className="mr-1" />
-              {res.tempo}
-            </div>
-            <p className="text-sm text-gray-600 mb-1">{res.motivo}</p>
-            {res.docs && (
-              <p className="text-xs text-gray-500 bg-gray-50 p-2 rounded mt-2 border border-gray-100">
-                <span className="font-semibold text-gray-700">Documentos:</span> {res.docs}
-              </p>
-            )}
-          </Card>
-        ))}
-      </div>
-    </section>
-
-    {/* Dinheiro */}
-    <section>
-      <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <DollarSign className="text-rose-600" />
-        Dinheiro e Câmbio
-      </h2>
-      <Card className="mb-4">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left text-gray-600">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b">
-              <tr>
-                <th className="px-4 py-3">Método</th>
-                <th className="px-4 py-3">Valor Recomendado</th>
-                <th className="px-4 py-3">Uso Ideal</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dataViagem.dinheiro.tabela.map((row, i) => (
-                <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">{row.metodo}</td>
-                  <td className="px-4 py-3 text-emerald-600 font-semibold">{row.valor}</td>
-                  <td className="px-4 py-3">{row.uso}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3 text-amber-800 text-sm">
-        <AlertCircle className="shrink-0 mt-0.5" size={20} />
-        <div>
-          <strong className="block mb-1 text-base">Estratégia Western Union (Dia 1)</strong>
-          {dataViagem.dinheiro.estrategia}
-        </div>
-      </div>
-    </section>
-
     {/* Dicas */}
     <section>
       <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <Info className="text-emerald-600" />
+        <Info className="text-sky-500" /> {/* Ícone alterado para cor azul/sky */}
         Informações Úteis
       </h2>
       <Card className="p-4">
@@ -356,6 +294,31 @@ const ViewGuia = () => (
             </li>
           ))}
         </ul>
+      </Card>
+    </section>
+
+    {/* Vida Noturna TikTok */}
+    <section>
+      <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+        <Moon className="text-indigo-600" />
+        Quer sair à noite?
+      </h2>
+      <Card className="p-5 bg-indigo-50 border-indigo-100 flex flex-col items-start gap-3">
+        <p className="text-sm text-indigo-900 leading-relaxed font-medium">
+          Buenos Aires depois da meia-noite não é uma cidade vazia — é uma cidade viva! 
+          Assista a este vídeo para ter um gostinho de como a <strong className="font-bold">Avenida Corrientes</strong> ferve na madrugada.
+        </p>
+        <a 
+          href="https://www.tiktok.com/search?q=avenida%20corriente%20buenos%20aires" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors shadow-md"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.28 6.28 0 005.4 15.65a6.28 6.28 0 004.45 6.2 6.28 6.28 0 007.82-6.08v-5.4a8.2 8.2 0 004.7 1.48V8.33a4.84 4.84 0 01-2.78-1.64z" />
+          </svg>
+          Ver vídeo no TikTok
+        </a>
       </Card>
     </section>
   </div>
@@ -503,7 +466,7 @@ export default function App() {
           active={activeTab === 'guia'} 
           onClick={() => { setActiveTab('guia'); setSelectedDay(null); }}
           icon={Info}
-          label="Preparativos"
+          label="Observações Adicionais"
         />
         <TabButton active={activeTab === 'checklist'} onClick={() => { setActiveTab('checklist'); setSelectedDay(null); }} icon={ListTodo} label="Afazeres" />
       </nav>
