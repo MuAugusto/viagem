@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Map, 
   Info, 
@@ -7,199 +7,218 @@ import {
   Moon, 
   Utensils, 
   IceCream2, 
+  AlertCircle, 
   CheckCircle2, 
   ChevronRight,
   ChevronLeft,
   MapPin,
-  Heart,
-  ListTodo, 
+  ListChecks,
+  CheckSquare,
   Square,
-  CheckSquare
+  Ticket,
+  Search,
+  Music,
+  Video,
+  Languages,
+  MessageCircle,
+  Heart,
+  Luggage,
+  CalendarClock
 } from 'lucide-react';
 
-// --- DADOS DA VIAGEM ---
 const dataViagem = {
-  reservas: [
-    { nome: "Colonia Express — Colonia del Sacramento", tempo: "entre 3 e 4 semanas antes", motivo: "Motivo: horários específicos e vagas podem acabar. Preferência: saída pela manhã para aproveitar mais a cidade.", docs: "RG em bom estado ou passaporte" },
-    { nome: "Tango Porteño", tempo: "2 a 3 semanas antes", motivo: "Escolha recomendada: Jantar + show. Dica: Assentos centrais costumam valer mais a pena." },
-    { nome: "La Cabrera", tempo: "1 a 2 semanas antes", motivo: "Melhor horário: entre 20h e 21h." },
-    { nome: "Teatro Colón", tempo: "1 semana antes", motivo: "Preferência: visitas entre manhã e início da tarde." },
-    { nome: "El SecreTito", tempo: "alguns dias antes", motivo: "Motivo: costuma lotar." },
-  ],
   dicas: [
     "Cartão transporte público: Sube",
     "Aplicativo para saber as rotas do metrô: BA Cómo Llego",
     "Aplicativo de entrega de comida: PedidosYa",
     "Aplicativo de transporte uber e taxi premium",
-    "Comprar repelente",
-    "Ao sacar o dinheiro em uma das unidades da WesterUnion se atentar aos horários que elas abrem",
-    "Site para aquisição dos passeios: https://www.civitatis.com/br/buenos-aires/",
     "Treinar perguntas imigração: Onde vai ficar, motivo da viagem, tempo"
-  ],
-  dinheiro: {
-    tabela: [
-      { metodo: "Wise", valor: "R$ 3.600–4.200", uso: "restaurantes, Uber, reservas, La Cabrera, Tango Porteño, lojas" },
-      { metodo: "Dinheiro / WU", valor: "R$ 1.800–2.400", uso: "cafés pequenos, gorjetas, feiras, kioscos, emergências, descontos em dinheiro" }
-    ],
-    estrategia: "No dia 1 da viagem na Western Union:\nRetiraria algo como ARS equivalente a R$ 800–1.200 inicialmente.\nIsso cobre aproximadamente: cafés, Mercado San Telmo, pequenas compras, SUBE, gorjetas, kioscos, situações onde aparece desconto por pagamento em dinheiro.\nDepois, no meio da viagem (Dia 5–6), vocês olham o ritmo de gasto."
-  },
-  checklistInicial: [
-    "Comprar Repelente",
-    "Receber cartão da Wise",
-    "Verificar se o chip da Daiane irá funcionar na Argentina",
-    "Comprar passeios"
   ],
   roteiro: [
     {
       dia: 1,
       imagem: "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=600&auto=format&fit=crop",
-      titulo: "Microcentro leve + San Telmo de domingo",
-      manha: "Aterrissagem e Uber do aeroporto diretamente para o apartamento na Suipacha, Retiro. Após o check-in e alocação das bagagens, o casal deve realizar um breve descanso para restauração de energia.",
-      almoco: "Restaurante principal: Santos Manjares (Calle Paraguay 938). Localizado a escassos minutos de caminhada da Suipacha . Este é um estabelecimento de cortes de carne excelentes a preços justos, introduzindo o paladar à parrilla argentina sem o peso de um protocolo extremamente formal de lua de mel.\n\nAlternativa de restaurante: Pizzería El Cuartito (Talcahuano 937), oferecendo a experiência vibrante e calorosa das clássicas empanadas argentinas e pizzas de massa alta.",
-      tarde: "Caminhada contemplativa pela icônica Calle Florida em direção ao Obelisco. A transição da Suipacha para a Calle Florida é uma descida suave rumo ao eixo comercial histórico de Buenos Aires. Este momento serve para absorver o ritmo da cidade, observar a arquitetura eclética e adentrar o suntuoso edifício das Galerías Pacífico, cuja cúpula central exibe magníficos murais afrescados.\n\nCompras / Logística (Obrigatório): Parada estratégica na agência Western Union localizada no interior das Galerías Pacífico (Av. Córdoba 550).\n\nInstruções: Uma vez que o desembarque ocorre em um domingo, a quase totalidade das casas de câmbio de rua e pequenas agências da Western Union encontram-se fechadas. A filial dentro deste shopping não apenas opera aos domingos (das 10:00 às 20:00), mas também detém vastas reservas de dinheiro em espécie e oferece o amparo da segurança privada do centro comercial.\n\nFila e Dicas: Pode haver uma fila de cerca de 30 minutos. É imperativo portar o passaporte físico original (cópias não são aceitas) e o número MTCN da transferência. Sugere-se que um aguarde na fila enquanto o outro observa a arquitetura ou adquire um café nas proximidades.",
-      gelato: "Cadore , na Av. Corrientes 1695, é a parada mais simbólica para fechar o primeiro dia; Alternativa próxima e mais “leve”: uma Rapanui da cidade.",
-      noite: "Jantar recomendado: Pizzería Guerrín (Avenida Corrientes 1368). Símbolo supremo da identidade urbana portenha.\n\nPasseio noturno opcional: Caminhada pela Avenida Corrientes sob as luzes neon, admirando as fachadas dos teatros de revista em direção ao Obelisco iluminado, capturando a primeira grande fotografia noturna da lua de mel.",
-      obs: "Melhor forma de transporte: Exclusivamente a pé. Todo o perímetro daSuipacha , Calle Florida, Galerías Pacífico e Avenida Corrientes forma um circuito contíguo, plano e vibrante."
+      titulo: "Microcentro leve + Rota do Obelisco",
+      manha: "Aterrissagem e Uber do aeroporto diretamente para o apartamento na Suipacha 1211, Retiro. Após o check-in e alocação das bagagens, realizem um breve descanso.",
+      almoco: "Restaurante principal: Santos Manjares (Calle Paraguay 938). Fica a escassos minutos de caminhada do hotel. (Alternativa: Pizzería El Cuartito).",
+      tarde: "🗺️ A ROTA: Saindo do almoço, vocês vão 'descer' (em direção ao rio) até a Calle Florida (um calçadão gigante para pedestres). Caminhem nela até a esquina com a Av. Córdoba para entrar no shopping Galerías Pacífico.\n\n🛒 COMPRAS FLEXÍVEIS: Vocês não precisam correr para fazer as compras da farmácia/mercado de uma vez só! Façam isso enquanto caminham ao longo da Calle Florida. Entrem numa Farmaplus e num mercadinho (Carrefour/DIA) de forma natural durante o passeio.\n\nApós o shopping, vocês vão 'subir' as ruas na direção contrária até a imensa Avenida 9 de Julio para ver o Obelisco (esquina com a Av. Corrientes).",
+      gelato: "Cadore (Av. Corrientes 1695) ou Rapanui.",
+      noite: "Jantar recomendado: Pizzería Guerrín (Avenida Corrientes 1368).\nCaminhada na Av. Corrientes sob as luzes neon.",
+      obs: "NÃO PRECISA se preocupar com Western Union hoje! O dia é todo a pé. Use apenas o seu cartão Wise (ou de crédito) para os restaurantes e mercados hoje. Deixaremos a burocracia do dinheiro vivo para a manhã de segunda-feira.",
+      locais: ["Farmaplus / Farmacity", "Carrefour Express", "Santos Manjares", "Galerías Pacífico", "Obelisco", "Pizzería Guerrín"],
+      reservas: []
     },
     {
       dia: 2,
       imagem: "https://images.unsplash.com/photo-1612294037637-ec328d0e075e?q=80&w=600&auto=format&fit=crop",
       titulo: "Recoleta clássica + livraria + arte",
-      manha: "Comece pela Biblioteca Nacional Mariano Moreno , que atende presencialmente em dias úteis de 9h às 18h . Dali, siga para o El Ateneo Grand Splendid , na Av. Santa Fe 1860; a livraria funciona de segunda a sábado, 9h às 21h , e domingo, 11h às 21h . Esse é um dia perfeito para caminhar com calma, porque tudo fica muito bem conectado em Recoleta.",
-      almoco: "Almoce na própria Recoleta, de preferência algo que não roube energia do passeio\nRestaurante: El Sanjuanino .",
-      tarde: "Faça o combo Museu MALBA + Cemitério de Recoleta . O MALBA abre de segunda, quarta, quinta, sexta, sábado e domingo , com terça fechado; o horário mais confortável para vocês aqui é o início da tarde, e o museu fica em Av. Figueroa Alcorta 3415. O Cementerio de Recoleta faz visitas turísticas de 9h às 17h , com visitas guiadas gratuitas em espanhol saindo de hora em hora. Esse bloco fica muito elegante e muito argentino ao mesmo tempo.",
-      gelato: "Tome um gelato da Rapanui da região ou volte mais tarde para o Cadore se vocês já tiverem gostado dele. Para este dia, eu gosto de deixar o gelato como uma pausa entre o museu e o cemitério, porque ajuda a dar ritmo ao passeio.",
-      noite: "Jantar leve em Recoleta ou Retiro. Nada muito pesado, porque o dia já tem bastante conteúdo cultural. Se quiserem um fim de noite romântico, caminhem pela zona mais iluminada da Recoleta e voltem cedo.\n\nOpções de restaurantes: ...",
-      obs: "Melhor transporte: quase tudo a pé, com apoio de táxi entre MALBA e o cemitério se estiverem cansados. Cuidados: o cemitério é bonito, mas merece respeito e tempo; não tentem correr. Reservas necessárias: MALBA e El Ateneo normalmente são fáceis de encaixar sem grande drama, mas a ordem do dia deve respeitar as horas de abertura. O que vale muito: Biblioteca + El Ateneo + Recoleta"
+      manha: "Missão financeira logo cedo: ir à agência da Western Union próxima ao hotel (como a da rua Florida) para sacar os pesos argentinos da semana (Obrigatório levar Passaporte físico ou RG original). \n\nApós o saque (e já com a doleira cheia), comecem o passeio oficial indo até a grandiosa e brutalista Biblioteca Nacional Mariano Moreno (que atende presencialmente em dias úteis de 9h às 18h). Tirem fotos e depois caminhem pela Avenida Santa Fe até a belíssima livraria El Ateneo Grand Splendid (que funciona dentro de um antigo teatro na Av. Santa Fe 1860). O bairro da Recoleta é perfeito para caminhar com calma e reparar na arquitetura.",
+      almoco: "Almoce na própria Recoleta.\nRestaurante sugerido: El Sanjuanino (tradicionalíssimo pelas empanadas).",
+      tarde: "Faça o combo clássico da Recoleta: O imponente Cementerio de Recoleta (um museu a céu aberto impressionante, onde está o túmulo de Evita Perón) e depois o Museo MALBA (Museu de Arte Latino-Americana). \n\nEles não ficam tão distantes, mas como vocês já terão andado muito de manhã, não hesitem em pegar um táxi/Uber entre o Cemitério e o MALBA se o cansaço bater.",
+      gelato: "Rapanui da Recoleta.",
+      noite: "Depende do termômetro do cansaço:\n🔥 COM PIQUE: Vão jantar uma carne clássica na Parrilla Los Pinos (na Recoleta mesmo).\n😴 CANSADOS: Vão jantar no charmoso Croque Madame, que é uma opção excelente e que fica bem pertinho do hotel de vocês.",
+      obs: "O MALBA geralmente abre às segundas-feiras e fecha às terças, então hoje é um dia estratégico para conhecê-lo. \n\n💡 Lembrete de Noite Livre: Dependendo do ânimo, veja a aba 'Observações Adicionais' para dicas (como o Milión ou o Victoria Brown) caso queiram esticar para um drink.",
+      locais: ["Western Union", "Biblioteca Nacional Mariano Moreno", "El Ateneo Grand Splendid", "El Sanjuanino", "Cementerio de Recoleta", "MALBA", "Parrilla Los Pinos", "Croque Madame (Retiro)"],
+      reservas: ["MALBA: Recomenda-se comprar o ingresso antecipado pelo site oficial para evitar filas."] 
     },
     {
-      dia: 3,      
-      imagem: "https://images.unsplash.com/photo-1590114174489-6186e8befc15?q=80&w=600&auto=format&fit=crop",
-      titulo: "Palermo verde + Jardim Japonês + Planetário",
-      manha: "Comece pelo Jardín Japonês, que fica em Palermo e abre todos os dias de 10h às 18h45 . Logo depois, emende no Planetario Galileo Galilei , que trabalha com agenda e tickets; a própria página oficial orienta a consultar a programação, então a melhor decisão é verificar a função do dia e encaixar conforme a agenda da semana da viagem. Esse dia funciona muito bem pela manhã e começo da tarde, porque a região é verde e bonita para caminhar.",
-      almoco: "Fique em Palermo e almoce sem pressa. A ideia aqui é um almoço com varanda, jardim ou vista para o parque, porque esse é um dos dias mais “lua de mel” do roteiro. Se estiverem com apetite leve, guardem energia para o fim da tarde.\n\nOpções de restaurantes: ...",
-      tarde: "Façam o circuito a pé pelos Bosques de Palermo , Rosedal , Floralis Genérica e Facultad de Derecho . O Parque 3 de Febrero é livre e inclui lago, jardins e o Rosedal; a Floralis fica na Plaza de las Naciones Unidas e a Faculdade de Direito também é um ícone de Recoleta. É um bloco lindo, fotogênico e com bastante natureza para o que vocês gostam.",
-      gelato: "Hoje eu colocaria Rapanui , porque ela tem casas em Retiro, Recoleta, Palermo, Belgrano e Caballito e trabalha com helados artesanais. Sabor que combina com o dia: pistache ou doce de leite . Alternativa próxima: voltar ao Cadore se quiserem fechar a tarde em Corrientes mais tarde.",
-      noite: "Noite no Uptown Bar",
-      obs: "Melhor transporte: a pé + táxi/Uber entre o hotel e Palermo, porque o deslocamento é fácil mas o trajeto é mais confortável assim. Cuidados: o Planetário depende da agenda; confirme na semana. Reservas necessárias: no Jardim Japonês, basta comprar o ingresso conforme a visita; no Planetário, siga a agenda oficial. O que vale muito: esse é o melhor dia de natureza do roteiro."
+      dia: 3,
+      imagem: "https://images.unsplash.com/photo-1588614959060-4d144f28b207?q=80&w=600&auto=format&fit=crop",
+      titulo: "Palermo verde + Ecoparque",
+      manha: "Comece pelo Jardín Japonés. Em seguida, caminhe até o Ecoparque de Buenos Aires (antigo zoológico transformado em parque aberto, cheio de pavões e maras soltas).",
+      almoco: "O almoço aqui é 100% flexível dependendo da fome:\n🥪 Para Lanches Rápidos: Milanga (famosos lanches de milanesa) ou Kido.\n🍽️ Para Almoço Sentado/Restaurante: Narda Comedor (da chef Narda Lepes, comida fresca incrível) ou Belisario Roldán (opção clássica perto dos parques).",
+      tarde: "Circuito a pé pela natureza: Bosques de Palermo, Rosedal, Floralis Genérica (a flor de metal) e Facultad de Derecho.",
+      gelato: "Lucciano's (Em Palermo. Peçam os famosos 'ice pops' em formato de bichinhos ou os sabores de pistache).",
+      noite: "Noite animada no Uptown Bar (o famoso bar que você entra por uma estação de metrô de NY falsa).",
+      obs: "Melhor transporte hoje: a pé nos parques e Uber/Táxi para voltar.",
+      locais: ["Jardín Japonés", "Ecoparque de Buenos Aires", "Bosques de Palermo", "Uptown Bar", "Milanga", "Kido", "Narda Comedor", "Belisario Roldán", "Lucciano's"],
+      reservas: ["Uptown Bar: Tente reservar no site ou chegue assim que abrir (20h) para fugir de uma fila absurda na porta."]
     },
     {
-      dia: 4,      
-      imagem: "https://images.unsplash.com/photo-1761359841098-8e84b7cf3661?q=80&w=600&auto=format&fit=crop",
-      titulo: "Centro histórico + Teatro Colón + tango da noite",
-      manha: "Faça o eixo Plaza de Mayo + Casa Rosada . O Museu da Casa Rosada abre quarta a domingo e feriados, das 10h às 18h ; então a quarta-feira é o encaixe ideal. Depois, caminhem pelo centro histórico sem pressa, com a Catedral e o entorno da praça.",
-      almoco: "Almoce no corredor da Avenida de Mayo e deixe o café para o Tortoni. O Café Tortoni funciona todos os dias de 8h às 21h , e o show de tango acontece de segunda a sábado, às 18h e 20h . É um clássico absoluto, muito turístico, mas com identidade porteña real — vale mais pela atmosfera do que pela cozinha em si.\n\nOpções de restaurantes: ...",
-      tarde: "Passe pelo Teatro Colón . As visitas guiadas acontecem todos os dias , com saídas a cada 15 minutos, de 10h a 16h45 , e duração média de 50 minutos ; a bilheteria presencial funciona de segunda a sábado de 9h às 20h e domingos/feriados de 9h às 17h . Depois, siga pela área do Obelisco e da Corrientes para uma caminhada clássica de Buenos Aires.",
-      gelato: "Aqui o mais natural é parar no Cadore , porque ele fica na Av. Corrientes 1695, pertinho do circuito teatral. É o gelato certo para um fim de tarde clássico. Sabor-destaque para mim neste dia: dulce de leche ou chocolate amargo .",
-      noite: "A noite é do Tango Porteño. Ele fica a poucos metros do Obelisco e o site oficial mostra a experiência como jantar às 20h30 e show às 22h00, com duração de cerca de 1h30. É a escolha mais coerente para lua de mel neste roteiro porque entrega espetáculo, jantar e logística fácil no mesmo bloco",
-      obs: "Melhor transporte: a pé + táxi/Uber entre Plaza de Mayo, Colón e Puerto Madero. Cuidados: esse é um dia em que os horários importam, então eu faria Casa Rosada cedo, Colón depois e o tango no fim da noite. Reservas necessárias: Casa Rosada, Colón e Madero Tango merecem organização prévia. O que vale muito: é o dia mais “postal” do roteiro."
+      dia: 4,
+      imagem: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop",
+      titulo: "Casa Rosada, Flexibilidade e Tango",
+      manha: "Manhã 100% livre! Como a noite anterior foi agitada no Uptown, acordem a hora que quiserem. \n\nQuando estiverem prontos, vão para a Plaza de Mayo ver a Casa Rosada por fora e visitar o Museo del Bicentenario (museu gratuito, incrível e que fica logo atrás da Casa Rosada).",
+      almoco: "Depende da energia de vocês após o museu:\n\n🏃‍♂️ COM PIQUE: Caminhem até San Telmo, tirem foto com a estátua da Mafalda e comam uma carne no La Brigada ou um choripán clássico no El Desnivel.\n\n🚶‍♀️ MÉDIO: Caminhem para Puerto Madero e almocem no La Parolaccia Trattoria (excelentes massas com vista pros diques).\n\n🥱 MUITO CANSADOS: Vão direto para a Avenida de Mayo comer no clássico Café Tortoni, ou num café pertinho do Teatro Colón para sentar e descansar antes da visita.",
+      tarde: "Às 16h00 em ponto: Visita Guiada ao Teatro Colón (durante 50 minutos vocês conhecerão um dos teatros mais bonitos do mundo). Fiquem atentos ao horário para não atrasar!",
+      gelato: "Cadore (já que fica na Av. Corrientes, perto do Tango).",
+      noite: "Noite super elegante de Tango Porteño (Jantar e show).",
+      obs: "A ideia de hoje é focar numa manhã tardia, um almoço flexível e guardar as pernas para a elegância do Tango à noite.",
+      locais: ["Casa Rosada", "Museo del Bicentenario", "Estátua da Mafalda", "Parrilla La Brigada", "El Desnivel", "La Parolaccia Trattoria", "Café Tortoni", "Teatro Colón", "Tango Porteño"],
+      reservas: [
+        "Teatro Colón: JÁ RESERVADA PARA ÀS 16h00 (em português).",
+        "Tango Porteño: JÁ PAGO!"
+      ]
     },
     {
       dia: 5,
-      imagem: "https://images.unsplash.com/photo-1588444543009-7db73c43514e?q=80&w=600&auto=format&fit=crop",
-      titulo: "Museu Bernardino Rivadavia + La Cabrera",
-      manha: "Deixe a manhã mais solta e use para ir com calma até Caballito . O ponto obrigatório aqui é o Museo de Ciencias Naturales Bernardino Rivadavia , que abre todos os dias de 14h às 19h ; por isso ele encaixa melhor depois do almoço. Esse dia fica bom para respirar um pouco fora do eixo mais turístico e ainda assim manter o roteiro bonito e inteligente.",
-      almoco: "Faça um almoço leve perto de Caballito ou já perto de Palermo, dependendo do ritmo de vocês. Eu não gastaria o “cartucho” de jantar premium no almoço deste dia, porque a noite merece a La Cabrera .\n\nOpções de padarias: ...",
-      tarde: "Visite o museu com calma e, se der vontade, alongue a caminhada com um pedacinho de parque. O museu é o mais antigo do país e tem uma coleção muito forte de paleontologia, geologia e fauna; para quem gosta de experiências memoráveis, ele encaixa bem porque foge do roteiro mais óbvio.",
-      gelato: "Se estiverem próximos da Corrientes depois, voltem de novo ao Cadore ; se preferirem algo mais prático, uma Rapanui em Palermo ou Caballito resolve sem desvio. Hoje eu iria de sabor clássico, simples e seguro.",
-      noite: "Aqui entra a La Cabrera , em Palermo, que funciona todos os dias de 12h às 16h e de 18h30 à 1h . É uma casa mais turística e mais cara, mas muito forte para uma noite especial; o melhor momento para reservar é com antecedência, e eu trataria esse jantar como um dos dois grandes “luxos” do roteiro. Alternativa mais econômica: dividir cortes e acompanhamentos, ou trocar por uma parrilla de bairro no mesmo perímetro de Palermo.",
-      obs: "Melhor transporte: táxi/Uber entre Caballito e Palermo para não perder energia. Cuidados: o museu abre só à tarde, então não vale correr pela manhã. Reservas necessárias: La Cabrera, sim; o museu, não. O que vale muito: esse é o dia que equilibra cultura menos óbvia com jantar premium."
+      imagem: "https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=600&auto=format&fit=crop",
+      titulo: "Caballito cultural + La Cabrera",
+      manha: "09:00–10:00 — ☕ Café da manhã no Terraza Mediterránea\n\n10:00–11:30 — 🏘️ Caminhada no Barrio Inglés + Av. Pedro Goyena. Bairro incrível pelas casas e arquitetura de influência britânica.\nRota: Terraza Mediterránea → Pedro Goyena → ruas do Barrio Inglés → voltar em direção ao Parque Rivadavia.\n\n11:30–12:30 — 📚 Parque Rivadavia (Foco na feira permanente de livros, revistas e discos usados, além da antiga noria da família Lezica).\n\n12:30 — 🚕 Peguem um Uber/Cabify direto do Rivadavia para o Parque Centenario (não vale a pena ir andando).\n\n13:00–13:30 — 🌳 Parque Centenario (Volta curta pelo lago e área verde).",
+      almoco: "13:30–14:30 — ☕ Almoço/café flexível e espontâneo.\nOpções perto do parque Centenario: Traje Café (Díaz Vélez), Tienda de Café (Díaz Vélez), Ugá coffee house (Ángel Gallardo) ou Café del Parque (Viel).",
+      tarde: "15:00–17:00 — 🦖 Museo de Ciencias Naturales Bernardino Rivadavia.",
+      gelato: "Rapanui.",
+      noite: "Noite de jantar premium: La Cabrera, em Palermo.",
+      obs: "Não coma pratos pesados no almoço para ter espaço para as carnes e guarnições da La Cabrera à noite.",
+      locais: ["Terraza Mediterránea", "Barrio Inglés", "Parque Rivadavia", "Parque Centenario", "Museo Bernardino Rivadavia", "La Cabrera"],
+      reservas: ["La Cabrera: Reservar via site ou WhatsApp com 1 a 2 semanas de antecedência (busque entre 20h e 21h)."]
     },
     {
       dia: 6,
-      imagem: "https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?q=80&w=600&auto=format&fit=crop",
-      titulo: "Belgrano + Barrio Chino + parques do norte",
-      manha: "Vá para Belgrano e caminhe com calma pelo Barrio Chino , que fica entre Arribeños, Mendoza, Juramento e Montañeses . A área é uma porção bem definida do bairro, com identidade oriental forte e ótima para passeio a pé. Eu gosto desse dia para uma manhã sem pressa, com lojas, padarias, restaurantes e ambiente diferente do resto da cidade.",
-      almoco: "Almoce dentro ou ao redor do Barrio Chino. Esse é um dos lugares mais autênticos para variar da parrilla e da pizza, sem perder o clima local. Se quiserem economizar, um almoço simples aqui rende melhor do que tentar transformar tudo em comida cara de bairro turístico.",
-      tarde: "Estique a caminhada até as Barrancas de Belgrano e, se ainda houver energia, dê um salto ao Parque 3 de Febrero , que é uma área livre e verde ótima para caminhar. O parque reúne lago, rosedal, planetário e outras atrações, então é uma tarde muito boa para natureza urbana.",
-      gelato: "Aqui eu faria Rapanui Belgrano ou Rapanui Palermo , porque isso casa bem com o bairro e com o ritmo do dia. Sabor certo: algo cremoso e clássico, como dulce de leche ou pistache .",
-      noite: "Jantar no El SecreTito ; é um bodegón de clima muito local, com pratos abundantes e forte identidade de bairro, e o Turismo Buenos Aires avisa que ele costuma lotar, então reservar é o ideal. É uma escolha excelente para equilibrar o orçamento, porque entrega mais autenticidade do que glamour.",
-      obs: "Melhor transporte: táxi/Uber até Belgrano e caminhada no bairro. Cuidados: o Barrio Chino funciona melhor de dia e começo da tarde. Reservas necessárias: El SecreTito, sim. O que vale muito: é o dia mais “local” do roteiro norte."
+      imagem: "https://images.unsplash.com/photo-1555529733-0e67056058ab?q=80&w=600&auto=format&fit=crop",
+      titulo: "Belgrano + Barrio Chino + La Uat",
+      manha: "Vá para Belgrano e caminhe pelo Barrio Chino (Chinatown portenha).",
+      almoco: "Comida asiática de rua ou num restaurante no Barrio Chino.",
+      tarde: "Barrancas de Belgrano e Parque 3 de Febrero.",
+      gelato: "Qualquer uma nas redondezas.",
+      noite: "La Uat. Atenção à vibe: diferente do Uptown que é mais focado na coquetelaria sentada, o La Uat tem uma pegada muito mais balada/pista de dança para o final da noite.",
+      obs: "Se bater cansaço, voltem pro Airbnb de tarde antes da balada.",
+      locais: ["Barrio Chino", "Barrancas de Belgrano", "La Uat"],
+      reservas: ["La Uat: Mesa JÁ RESERVADA para as 23h15! (Cheguem com a energia alta, pois é mais balada!)."]
     },
     {
       dia: 7,
-      imagem: "https://images.unsplash.com/photo-1561927130-0f2a933204f7?q=80&w=600&auto=format&fit=crop",
-      titulo: "Colonia del Sacramento, Uruguai",
-      manha: "Saída cedo de Puerto Madero Sur , no terminal da Colonia Express em Av. Elvira Rawson de Dellepiane 155 . Para o trecho Buenos Aires–Colonia, a companhia oferece saídas, no período de 01/03/2026 a 30/11/2026 , às 8:30, 10:30, 12:50, 18:30 e 20:00 , com duração de 1h15 . Para o seu perfil, o melhor é a saída mais cedo possível, porque você ganha tempo útil na cidade uruguaia sem correr demais.",
-      almoco: "Leve lanche na bolsa e use a cidade para uma refeição mais simples. Os próprios relatos de viagem que vocês trouxeram já apontam que comer lá pode pesar, então o plano mais inteligente é priorizar o passeio e controlar o gasto.",
-      tarde: "Passeio livre por Colonia del Sacramento : centro histórico, ruas de pedra, mirantes e pausa romântica. Em lua de mel, esse é o passeio que mais foge do óbvio e que normalmente vira lembrança forte da viagem. Eu deixaria ao menos algumas horas sem compromisso, para caminhar, sentar e aproveitar a cidade com calma.",
-      gelato: "Se houver tempo no retorno a Buenos Aires, faça um gelato leve na volta. Se o dia apertar, a regra aqui é não inventar moda: Colonia já é o grande programa do dia.",
-      noite: "Jantar leve perto do hotel ou descanso total. A travessia costuma cansar um pouco, então vale mais chegar bem ao fim da noite do que tentar “aproveitar cada segundo”.\nOpções de restaurantes: ...",
-      obs: "Melhor transporte: ferry + caminhada na cidade. Cuidados: compre com antecedência e mantenha documentos à mão. Reservas necessárias: sim, principalmente se quiser a grade mais cedo. O que vale muito: esse é o melhor bate-volta do roteiro para casal."
+      imagem: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=600&auto=format&fit=crop",
+      titulo: "Colonia del Sacramento (Uruguai)",
+      manha: "⛴️ 11h20: Check-in Obrigatório no terminal!\nO terminal é o 'Colonia Express' em Puerto Madero Sur (Av. Elvira Rawson de Dellepiane 155). Peguem um Uber do Airbnb umas 10h45 para chegar lá com folga (1h30 antes do barco).\n12h50: Saída do Barco.\n14h05: Chegada no Uruguai.",
+      almoco: "Como vocês chegam às 14h, comam algo rápido pela cidade histórica, pois vocês têm um lanche robusto agendado logo depois.",
+      tarde: "Caminhem pela cidade velha, vejam a rua de pedras 'Calle de los Suspiros' e o Farol.\n\n☕ 16h00 às 18h30: Merienda na Casa Lahusen!\nDirijam-se para a Casa Lahusen (Rua De España, 217). Vocês têm o clássico café da tarde uruguaio ('Merienda') que já está pago no voucher de vocês!",
+      gelato: "Se quiserem, após o café da tarde.",
+      noite: "⛴️ 18h45: Retorno ao terminal del porto en Colonia para el Check-in da volta.\n20h15: Saída do barco de volta para a Argentina.\n21h30: Chegada em Buenos Aires.",
+      obs: "⚠️ LEVE O PASSAPORTE/RG FÍSICO (É imigração de verdade)! Imprima os dois PDFs (BookingConfirmation e Voucher) que você recebeu por email e os entregue nos guichês.",
+      locais: ["Terminal Colonia Express (Av. Elvira Rawson 155)", "Colonia del Sacramento", "Casa Lahusen (De España 217)"],
+      reservas: ["Colonia Express: JÁ PAGO! (Inclui o barco ida/volta e a Merienda). Chegar ao terminal às 11h20 em ponto!"]
     },
     {
       dia: 8,
-      imagem: "https://images.unsplash.com/photo-1679417302656-9b5170584526?q=80&w=600&auto=format&fit=crop",
-      titulo: "Caminito + Feira de San Telmo",
-      manha: "Passeio cedo na icônica passagem de paralelepípedos de Caminito no bairro operário de La Boca, um bairro colorido e muito tradicional da Argentina\n\nDica: Chegar cedo para evitar turistas",
-      almoco: "Use um lugar simples e despretensioso em San Telmo. O bairro combina muito com comida de mesa corrida, bodegón ou um mercado gastronômico, e a graça é mais a atmosfera do que o luxo.\n\nRestaurantes: La Brigada, ou choripáns",
-      tarde: "Feira de San Telmo. Desdobrando-se estritamente aos domingos a partir da poética e sombreada Plaza Dorrego, a feira transborda pela extensão contígua da Calle Defensa\n\nCasa da Mafalda fica aqui",
-      gelato: "Freddo (na própria unidade da Calle Defensa 995, em San Telmo).",
-      noite: "Se tiverem energia, retornem para Puerto Madero para uma caminhada noturna curta. É um fechamento muito bonito depois de um dia mais histórico e popular. Ou vá para um bar secreto (como: ...), ou vá mais cedo para o hotel",
-      obs: "Melhor transporte: taxi/Uber entre San Telmo e Caminito. Cuidados: La Boca rende muito mais de dia. Reservas necessárias: nenhuma para a parte de rua; só jantar, se vocês quiserem algo específico. O que vale muito: é o lado mais histórico e popular de Buenos Aires."
+      imagem: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=600&auto=format&fit=crop",
+      titulo: "Caminito + San Telmo (Feira)",
+      manha: "Visita rápida ao Caminito (bairro de La Boca) só pela manhã para evitar muito turista e muito sol. (Lembrete: Não fujam das 3 ruelas principais super turísticas por segurança).",
+      almoco: "Parrilla clássica ou lanches na rua (choripán clássico de domingo).",
+      tarde: "Feira de San Telmo (A maior feira da cidade acontece aos domingos!). Caminhem com calma, vejam os antiquários, ouçam os músicos de rua e aproveitem a tarde livre de horários.",
+      gelato: "Freddo (San Telmo).",
+      noite: "Noite Livre! Após bater perna o dia todo na feira (que é enorme), voltem para o Airbnb e descansem. \n🍕 Sugestão Perfeita: Aproveitem a noite livre e o cansaço para pedir ou ir comer uma pizza porteña clássica na Pizzería Guerrín, na Av. Corrientes.",
+      obs: "Um dia 100% solto, feito apenas para caminhar e curtir a vibração portenha de domingo sem amarras.",
+      locais: ["Caminito", "Feira de San Telmo", "Pizzería Guerrín"],
+      reservas: []
     },
     {
       dia: 9,
-      imagem: "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?q=80&w=600&auto=format&fit=crop",
-      titulo: "Puerto Madero de dia + Puente de la Mujer",
-      manha: "Faça um passeio bem tranquilo por Puerto Madero , com tempo para calçadão e fotos. O Puente de la Mujer é um dos símbolos do bairro; a própria Cidade de Buenos Aires explica que ele representa um casal dançando tango. Também aproveite a manhã para visitar a Reserva Ecológica Costanera Sur",
-      almoco: "Almoce por ali se quiserem conforto e praticidade. Como é uma área mais turística e mais arrumada, ela é boa para um almoço bonito, mas eu não deixaria um orçamento pesado no bairro todos os dias.\n\nOpções de padarias: ...",
-      tarde: "Continue caminhando por Puerto Madero sem meta rígida. O ideal é deixar o ritmo mais lento, porque o bairro funciona muito bem para casal, fotos e descanso visual depois dos dias mais cheios.",
-      gelato: "Persicco",
-      noite: "Se vocês quiserem uma noite romântica sem show, Puerto Madero é a melhor escolha para jantar e voltar cedo. A noite é repleto de restaures, escolha um que vocês prefererirem, aqui estão algumas opções: ....",
-      obs: "Melhor transporte: a pé + táxi/Uber. Cuidados: não precisa lotar esse dia; o charme está justamente em deixá-lo leve. Reservas necessárias: apenas se forem jantar em restaurante mais disputado. O que vale muito: é o dia mais romântico do waterfront."
+      imagem: "https://images.unsplash.com/photo-1596489510344-909d73d6eb75?q=80&w=600&auto=format&fit=crop",
+      titulo: "Palácio Barolo + Florería Atlántico",
+      manha: "Manhã de descanso e recuperação! Durmam até mais tarde e tomem um café da manhã sem pressa pelas redondezas.",
+      almoco: "Almocem num lugar aconchegante pelo centro ou Retiro.",
+      tarde: "🏛️ Visita guiada ao Palacio Barolo (no Centro Histórico). Subam até o farol para ver a cidade de cima na luz do fim de tarde! Um passeio de arquitetura belíssimo que não exige grande esforço físico.",
+      gelato: "Cadore (Perto do Barolo).",
+      noite: "Noite sofisticadíssima no Florería Atlántico (bar escondido no subsolo de uma floricultura chique). \nFica na região do Retiro, super prático para ir a partir do hotel de vocês após tomarem um banho.",
+      obs: "O Palácio Barolo é maravilhoso para preencher a tarde e não cansa muito, perfeito para estarem 'inteiros' na noite de drinks finos no Florería.",
+      locais: ["Palacio Barolo", "Florería Atlántico"],
+      reservas: [
+        "Palacio Barolo: Comprar o ingresso guiado online com 2 ou 3 dias de antecedência.",
+        "Florería Atlántico: Planejem chegar lá por volta das 19h / 19h30 para sentar confortavelmente no balcão sem enfrentar filas quilométricas!"
+      ]
     },
     {
       dia: 10,
-      imagem: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop",
-      titulo: "Tigre + Delta do Paraná (Roteiro Completo)",
-      manha: "08:00 - Vá para a 'Estación Retiro Mitre' (procure no mapa) e pegue o 'Tren Mitre – Ramal Tigre' até a última estação (Tigre).\n\n09:15 - Desça na 'Estación Tigre' e caminhe até a 'Estación Fluvial de Tigre' (Mitre 305). Não vá para o Puerto de Frutos ainda.\n\n09:30 - Compre o passeio: OPÇÃO A (Paseo por el Delta / Excursión turística). É um barco fechado que faz um circuito sem paradas. Não pegue a lancha coletiva.\n\n10:00 às 11:30 - Passeio pelo Delta.",
-      almoco: "11:30 às 12:30 - Saindo do barco (Estación Fluvial), coloque 'Paseo Victorica' no Google Maps e vá caminhando pela margem do rio vendo barcos e construções (a parte mais bonita da cidade).\n\n12:30 às 14:00 - Almoce em um dos restaurantes do Paseo Victorica.",
-      tarde: "14:00 às 15:00 - Caminhe até o 'Museo de Arte Tigre' (fica no próprio Paseo Victorica) para tirar fotos da arquitetura linda por fora.\n\n15:00 às 17:00 - Caminhe até o 'Puerto de Frutos'. Atenção: não é porto de barcos, é um enorme mercado para comprar artesanato, decoração, produtos de madeira e lembranças.\n\n17:00 - Retorne caminhando para a Estación Tigre.",
-      gelato: "Na volta para Buenos Aires, se sobrar disposição.",
-      noite: "18:00 - Pegue o Trem Mitre na Estación Tigre sentido Retiro.\n\n19:00 - Chegada em Buenos Aires. Jantar simples (Pizzería Banchero, ou ifood) e descanso total.",
-      obs: "💡 MAPA MENTAL PRÁTICO:\n1️⃣ Retiro ↓ trem\n2️⃣ Estación Tigre ↓ mapa: Estación Fluvial\n3️⃣ Estación Fluvial ↓ barco\n4️⃣ Delta ↓ barco volta\n5️⃣ Estación Fluvial ↓ mapa: Paseo Victorica\n6️⃣ Paseo Victorica / Museu ↓ mapa\n7️⃣ Puerto de Frutos ↓ mapa\n8️⃣ Estación Tigre ↓ trem\n9️⃣ Retiro"
+      imagem: "https://images.unsplash.com/photo-1522008629172-0c14eeef99b9?q=80&w=600&auto=format&fit=crop",
+      titulo: "Tigre e o Delta do Paraná",
+      manha: "08h00: Estación Retiro (Tren Mitre) → Estación Tigre.\n09h15: Chegada e caminhada até a Estación Fluvial.\n09h30: Comprar 'Paseo por el Delta'.\n10h-11h30: Passeio turístico de barco.",
+      almoco: "12h30: Restaurantes na beira do rio.",
+      tarde: "11h30: Caminhar pelo lindíssimo Paseo Victorica.\n14h: Fotos externas no Museo de Arte Tigre.\n15h: Compras de artesanato e coisas para casa no Puerto de Frutos.\n17h: Retornar caminhando para a Estação Tigre e pegar o trem de volta.",
+      gelato: "Antes de pegar o trem.",
+      noite: "Noite Livre e de descanso do trem.\n🍕 Sugestão: Se ainda não foram, a Pizzería Guerrín é uma excelente pedida rápida para matar a fome da viagem.",
+      obs: "🧠 MAPA MENTAL PARA HOJE:\n1. Trem em Retiro (Ramal Tigre) \n2. Chega na Estación Tigre \n3. Caminha pra Estación Fluvial \n4. Barco Turístico no Delta \n5. Caminha pelo Paseo Victorica \n6. Foto no Museo de Arte \n7. Feirinha no Puerto de Frutos \n8. Volta pra Estación Tigre e pega Trem.",
+      locais: ["Estación Retiro Mitre", "Estación Tigre", "Estación Fluvial (Tigre)", "Paseo Victorica", "Museo de Arte Tigre", "Puerto de Frutos", "Pizzería Guerrín"],
+      reservas: ["Passeio de Barco e Trem: Compra-se tudo na hora nos guichês e com o cartão Sube."]
     },
     {
       dia: 11,
-      imagem: "https://plus.unsplash.com/premium_photo-1733335230995-f2ec82620d5d?q=80&w=600&auto=format&fit=crop",
-      titulo: "ÚNICO dia de respiro",
-      manha: "Nada de programa pesado. Café com calma, caminhada curta e, no máximo, um giro leve perto do hotel. Esse é o único dia pensado para descansar de verdade.",
-      almoco: "Escolham algo próximo e confortável.",
-      tarde: "Tarde de compras, escolham um mercado e vão comprar lembrancinhas",
-      noite: "Aqui caso vocês não conseguirem fazer algum passeio antecessor aproveite essa noite, ou se quiserem voltar a um passeio que gostaram muito",
-      obs: "Dia pensado para descansar de verdade, sem obrigação de cumprir roteiro."
+      imagem: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop",
+      titulo: "Planetário + Tarde/Noite Livre",
+      manha: "Manhã totalmente livre para acordar sem despertador.\n\n🔭 12h00: Vão para os Bosques de Palermo para a Visita Guiada do Planetário.\n🔭 13h00: Assistam a apresentação imersiva da cúpula ('Buracos Negros').",
+      almoco: "Após o espetáculo (umas 14h00), achem um lugar agradável e calmo por Palermo para um almoço tardio.",
+      tarde: "Tarde livre! Já que estão em Palermo, passeiem sem destino ou voltem para o Airbnb para curtir um fim de tarde sem burocracias.",
+      gelato: "Qualquer um favorito.",
+      noite: "Noite Livre! Uma janela fantástica para vocês decidirem espontaneamente. \n🍕 Lembrete: Se ainda sobrou espaço, a Guerrín ou algum speakeasy da lista (como o Victoria Brown) são ótimas opções.",
+      obs: "O dia de 'respiro' perfeito. Compromisso guiado apenas ao meio-dia, o resto do dia e da noite são 100% para improvisar e relaxar.",
+      locais: ["Planetario Galileo Galilei", "Victoria Brown Bar", "Pizzería Guerrín"],
+      reservas: [
+        "Planetário: Comprar o ingresso online no site deles com antecedência (a agenda abre por semana, fiquem de olho!)."
+      ]
     },
     {
       dia: 12,
       imagem: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=600&auto=format&fit=crop",
-      titulo: "Parque de la Memoria + Museo Nacional de Arte Decorativo + Recoleta norte",
-      manha: "Comecem pelo Parque de la Memoria , que fica aberto de segunda a sexta, das 10h às 18h , e sábados, domingos e feriados, das 10h às 19h . É um espaço de reflexão, arte e vista para o rio, muito bonito para quem gosta de caminhar e quer algo mais contemplativo.",
-      almoco: "Façam um almoço na faixa de Recoleta/Palermo norte ou perto da rota de volta. \n\nOpções de restaurantes: ...",
-      tarde: "Siga para o Museo Nacional de Arte Decorativo , que abre de quarta a domingo, das 13h às 19h . Ele traz uma atmosfera de palacete e casa muito bem com um dia elegante, sem repetir MALBA nem Biblioteca. Se quiserem, fechem com uma caminhada pela Recoleta norte e Av. Alvear.",
-      gelato: "Cadore no retorno ao centro ou Rapanui se estiverem mais para o lado norte. Sabor: dulce de leche .",
-      noite: "Ir ao bar Florería Atlántico",
-      obs: "Dia elegante e contemplativo."
+      titulo: "Reserva Ecológica + Arte + El SecreTito",
+      manha: "Caminhada relaxante e grandiosa pela Reserva Ecológica Costanera Sur (em Puerto Madero). O foco aqui é a natureza e caminhar sem pressa. Usem repelente!",
+      almoco: "Almocem num restaurante agradável nos diques de Puerto Madero (Ex: La Parolaccia Trattoria) ou na região de Recoleta/Palermo onde fica o museu.",
+      tarde: "Passeio pelo lindíssimo Museo Nacional de Arte Decorativo. Um dos prédios (por fora e por dentro) mais bonitos de toda Buenos Aires.",
+      gelato: "Despedida do sorvete portenho.",
+      noite: "O grande jantar de despedida: El SecreTito.\nÉ um bodegón de bairro autêntico e fenomenal, perfeito para fechar a viagem com chave de ouro e muita fartura.",
+      obs: "Este é o último dia inteiro de fato. Usem tênis na parte da manhã por conta da Reserva e aproveitem a noite no bodegón!",
+      locais: ["Reserva Ecológica Costanera Sur", "Museo Nacional de Arte Decorativo", "El SecreTito"],
+      reservas: ["El SecreTito: Bodegón hiper concorrido. Liguem ou mandem WhatsApp com 2 a 3 dias de antecedência para garantir a mesa de despedida!"]
     },
     {
       dia: 13,
       imagem: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
-      titulo: "Volta ao Brasil",
-      manha: "Café da manhã sem pressa, check-out e saída com folga. Como o voo é às 18h , vocês ainda têm uma janela confortável para não acordar correndo.",
-      almoco: "Por fim um almoço nas redondezas do hotel. \n\nOpções de restaurantes: ...",
-      tarde: "Saída para o aeroporto com margem de segurança. Se sobrar tempo, apenas uma última parada prática e nada mais.",
-      gelato: "Se ainda couber uma despedida doce, fique com a casa mais perto do hotel. Não complica.",
-      obs: "Melhor transporte: carro por app. Cuidados: trânsito e atraso de última hora. Reservas necessárias: nenhuma. O que vale ou não vale a pena: no último dia, vale sair cedo e não estressar com passeio extra."
+      titulo: "O Retorno",
+      manha: "Check-out do apartamento e café leve.",
+      almoco: "Bem tranquilo.",
+      tarde: "Saída para o aeroporto.",
+      gelato: "No aeroporto.",
+      noite: "Voo.",
+      obs: "Façam o check-in online na noite anterior.",
+      locais: ["Aeroporto"],
+      reservas: ["Apenas confirmar o Uber com antecedência dependendo do trânsito."]
     }
   ]
 };
 
-// --- COMPONENTES ---
-
-const TabButton = ({ active, onClick, icon: Icon, label }: { active: boolean; onClick: () => void; icon: React.ElementType; label: string }) => (
+const TabButton = ({ active, onClick, icon: Icon, label }) => (
   <button
     onClick={onClick}
-    className={`flex-1 py-4 flex flex-col items-center justify-center gap-1 border-b-4 transition-colors ${
+    className={`flex-1 py-4 flex flex-col items-center justify-center gap-1 border-b-4 transition-colors shrink-0 min-w-[80px] ${
       active 
         ? 'border-rose-600 text-rose-700 bg-rose-50' 
         : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
@@ -210,76 +229,92 @@ const TabButton = ({ active, onClick, icon: Icon, label }: { active: boolean; on
   </button>
 );
 
-const Card = ({ 
-  children, 
-  className = "", 
-  style 
-}: { 
-  children: React.ReactNode; 
-  className?: string; 
-  style?: React.CSSProperties 
-}) => (
-  <div 
-    className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}
-    style={style}
-  >
+const Card = ({ children, className = "" }) => (
+  <div className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}>
     {children}
   </div>
 );
 
-// NOVA VIEW: Checklist
 const ViewChecklist = () => {
-  const [items, setItems] = useState(() => 
-    dataViagem.checklistInicial.map(text => ({ text, checked: false }))
-  );
+  const [itens, setItens] = useState([
+    { id: 1, text: "Adaptador de tomada universal (Pino 'I')", checked: false },
+    { id: 2, text: "Doleira / Porta-dólar", checked: false },
+    { id: 3, text: "Ziplocs Transparentes (Para levar os potinhos no aeroporto)", checked: false },
+    { id: 4, text: "Repelente de insetos (MENOR q 100ml)", checked: false },
+    { id: 5, text: "Desodorantes Roll-on (NUNCA levar Aerosol)", checked: false },
+    { id: 6, text: "Pastas de dente pequenas (para voo)", checked: false },
+    { id: 7, text: "Protetor Labial e Hidratante Facial", checked: false },
+    { id: 8, text: "Band-Aids (para bolhas das caminhadas)", checked: false },
+    { id: 9, text: "Remédios (Dor de cabeça, estômago, enjoo/Dramin)", checked: false },
+  ]);
 
-  const toggle = (index: number) => {
-    const newItems = [...items];
-    newItems[index].checked = !newItems[index].checked;
-    setItems(newItems);
+  const toggleCheck = (id) => {
+    setItens(itens.map(item => item.id === id ? { ...item, checked: !item.checked } : item));
   };
 
   return (
     <div className="space-y-6 pb-20 animate-fade-in">
-      <header>
-        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-          <ListTodo className="text-rose-600" />
-          Checklist Pré-Viagem
-        </h2>
-        <p className="text-sm text-gray-500 mt-1">Coisas importantes para resolver antes de embarcar.</p>
-      </header>
-      
-      <div className="space-y-3">
-        {items.map((item, i) => (
-          <button
-            key={i}
-            onClick={() => toggle(i)}
-            className={`w-full flex items-center gap-4 p-4 rounded-xl border transition-all text-left ${
-              item.checked ? 'bg-emerald-50 border-emerald-200 opacity-75' : 'bg-white border-gray-100 shadow-sm'
-            }`}
-          >
-            {item.checked ? (
-              <CheckSquare className="text-emerald-600 shrink-0" size={24} />
-            ) : (
-              <Square className="text-gray-300 shrink-0" size={24} />
-            )}
-            <span className={`font-medium ${item.checked ? 'line-through text-emerald-800' : 'text-gray-700'}`}>
-              {item.text}
-            </span>
-          </button>
-        ))}
+      <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100 flex items-center gap-4">
+        <Luggage className="text-emerald-500 shrink-0" size={32} />
+        <div>
+          <h3 className="font-bold text-emerald-900">Viagem Leve</h3>
+          <p className="text-sm text-emerald-700">Somente Mala de Bordo (10kg) + Mochila. Roupa pesada no corpo. Vocês usarão a máquina de lavar do Airbnb no dia 6!</p>
+        </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <AlertCircle className="text-rose-600" />
+          A Regra do Ziploc (Líquidos)
+        </h2>
+        <Card className="p-4 border-l-4 border-l-rose-500 bg-white">
+          <p className="text-sm text-gray-700 mb-3">
+            Como vocês <strong>não vão despachar mala</strong>, a regra internacional no raio-x é severa:
+          </p>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-rose-500"/> Máximo de 100ml por frasco/potinho.</li>
+            <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-rose-500"/> Frascos devem caber num saco plástico Ziploc transparente.</li>
+            <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-rose-500"/> Desodorante aerosol é <strong>proibido e jogado fora</strong>. Leve só roll-on.</li>
+          </ul>
+        </Card>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <ListChecks className="text-rose-600" />
+          Para Comprar / Separar (Os 2)
+        </h2>
+        <Card className="p-2">
+          <ul className="divide-y divide-gray-100">
+            {itens.map((item) => (
+              <li 
+                key={item.id} 
+                className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-50 transition-colors"
+                onClick={() => toggleCheck(item.id)}
+              >
+                {item.checked ? (
+                  <CheckSquare className="text-emerald-500 shrink-0" size={24} />
+                ) : (
+                  <Square className="text-gray-300 shrink-0" size={24} />
+                )}
+                <span className={`text-sm ${item.checked ? 'text-gray-400 line-through' : 'text-gray-700 font-medium'}`}>
+                  {item.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </section>
     </div>
   );
 };
 
-const ViewGuia = () => (
+const ViewObservacoes = () => (
   <div className="space-y-6 pb-20 animate-fade-in">
-    {/* Dicas */}
     <section>
       <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <Info className="text-sky-500" /> {/* Ícone alterado para cor azul/sky */}
-        Informações Úteis
+        <Info className="text-sky-500" />
+        Dicas e Logística
       </h2>
       <Card className="p-4">
         <ul className="space-y-3">
@@ -293,35 +328,89 @@ const ViewGuia = () => (
       </Card>
     </section>
 
-    {/* Vida Noturna TikTok */}
     <section>
       <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
         <Moon className="text-indigo-600" />
         Quer sair à noite?
       </h2>
-      <Card className="p-5 bg-indigo-50 border-indigo-100 flex flex-col items-start gap-3">
-        <p className="text-sm text-indigo-900 leading-relaxed font-medium">
-          Buenos Aires depois da meia-noite não é uma cidade vazia — é uma cidade viva! 
-          Assista a este vídeo para ter um gostinho de como a <strong className="font-bold">Avenida Corrientes</strong> ferve na madrugada.
+      <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100 mb-4">
+        <p className="text-sm text-indigo-900 mb-3">
+          Nos dias em que o roteiro aponta "Noite Livre", aqui estão excelentes opções portenhas:
         </p>
-        <a 
-          href="https://www.tiktok.com/search?q=avenida%20corriente%20buenos%20aires" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors shadow-md"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.28 6.28 0 005.4 15.65a6.28 6.28 0 004.45 6.2 6.28 6.28 0 007.82-6.08v-5.4a8.2 8.2 0 004.7 1.48V8.33a4.84 4.84 0 01-2.78-1.64z" />
-          </svg>
-          Ver vídeo no TikTok
-        </a>
-      </Card>
+        <ul className="space-y-4">
+          <li className="flex gap-3">
+            <Utensils className="text-indigo-500 shrink-0 mt-1" size={18} />
+            <div>
+              <strong className="block text-indigo-900 text-sm">Pizzería Guerrín (Av. Corrientes)</strong>
+              <span className="text-xs text-indigo-700">A pizza clássica argentina. Super caótica, farta de queijo (fugazzeta) e tradicional.</span>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <Music className="text-indigo-500 shrink-0 mt-1" size={18} />
+            <div>
+              <strong className="block text-indigo-900 text-sm">Victoria Brown Bar (Palermo)</strong>
+              <span className="text-xs text-indigo-700">Bar secreto (speakeasy) escondido atrás de um café. Atmosfera steampunk.</span>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <Music className="text-indigo-500 shrink-0 mt-1" size={18} />
+            <div>
+              <strong className="block text-indigo-900 text-sm">Milión (Recoleta)</strong>
+              <span className="text-xs text-indigo-700">Bar/Restaurante num casarão antigo espetacular com um jardim lindíssimo no fundo.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <a 
+        href="https://www.tiktok.com/@avenidacorriente/video/7424075727932378373" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="w-full bg-black text-white rounded-xl p-4 flex items-center justify-between hover:bg-gray-800 transition-colors shadow-md"
+      >
+        <div className="flex items-center gap-3">
+          <Video className="text-rose-500" size={24} />
+          <div className="text-left">
+            <strong className="block text-sm">Buenos Aires depois da meia-noite</strong>
+            <span className="text-xs text-gray-300">Assistir vídeo no TikTok</span>
+          </div>
+        </div>
+        <ChevronRight size={20} className="text-gray-400" />
+      </a>
     </section>
   </div>
 );
 
-const ViewRoteiroList = ({ onSelectDay }: { onSelectDay: (dia: number) => void }) => (
+const ViewRoteiroList = ({ onSelectDay }) => (
   <div className="space-y-3 pb-20 animate-fade-in">
+    
+    {}
+    {/* PAINEL DE TAREFAS DISCRETO */}
+    <div className="bg-slate-50 rounded-xl p-4 mb-6 border border-slate-200">
+      <div className="flex items-center gap-2 mb-3 border-b border-slate-200 pb-2">
+        <CalendarClock className="text-slate-500 shrink-0" size={20} />
+        <h3 className="font-semibold text-slate-700 text-sm tracking-wide">PENDÊNCIAS DE RESERVA</h3>
+      </div>
+      <ul className="space-y-2 text-sm text-slate-600 ml-1">
+        <li className="flex items-start gap-2">
+          <Ticket size={16} className="mt-0.5 shrink-0 text-slate-400" /> 
+          <span>Comprar online: <strong>MALBA</strong> (Dia 2)</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <Ticket size={16} className="mt-0.5 shrink-0 text-slate-400" /> 
+          <span>Comprar online: <strong>Planetário</strong> (Ficar de olho, Dia 11)</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <Ticket size={16} className="mt-0.5 shrink-0 text-slate-400" /> 
+          <span>Comprar online: <strong>Palácio Barolo</strong> (Dia 9)</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <MessageCircle size={16} className="mt-0.5 shrink-0 text-slate-400" /> 
+          <span>WhatsApp: Mesa no <strong>El SecreTito</strong> (Dia 12)</span>
+        </li>
+      </ul>
+    </div>
+
     <div className="bg-rose-50 rounded-xl p-4 mb-6 border border-rose-100 flex items-center gap-4">
       <Heart className="text-rose-500 shrink-0" size={32} />
       <div>
@@ -334,7 +423,7 @@ const ViewRoteiroList = ({ onSelectDay }: { onSelectDay: (dia: number) => void }
       <button
         key={dia.dia}
         onClick={() => onSelectDay(dia.dia)}
-        className="w-full bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:border-rose-300 hover:shadow-md transition-all flex items-center text-left group overflow-hidden"
+        className="w-full bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:border-rose-300 transition-all flex items-center text-left group overflow-hidden"
       >
         <div className="relative w-20 h-20 rounded-lg overflow-hidden shrink-0 mr-4 border border-gray-100">
           <img src={dia.imagem} alt={dia.titulo} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -351,7 +440,7 @@ const ViewRoteiroList = ({ onSelectDay }: { onSelectDay: (dia: number) => void }
   </div>
 );
 
-const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) => {
+const ViewDiaDetalhe = ({ dia, onBack }) => {
   const info = dataViagem.roteiro.find(d => d.dia === dia);
   if (!info) return null;
 
@@ -384,13 +473,11 @@ const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) =>
       </div>
 
       <div className="space-y-4">
-        {blocos.map((bloco, idx) => {
-          const BlocoIcon = bloco.icon;
-          return (
+        {blocos.map((bloco, idx) => (
           <Card key={idx} className="p-4 border-l-4" style={{ borderLeftColor: 'currentColor' }}>
             <div className={`flex items-start gap-3 ${bloco.color}`}>
               <div className={`p-2 rounded-lg ${bloco.bg} shrink-0`}>
-                <BlocoIcon size={20} />
+                <bloco.icon size={20} />
               </div>
               <div>
                 <h4 className="font-bold text-gray-800 text-sm uppercase tracking-wider mb-1">{bloco.label}</h4>
@@ -398,15 +485,46 @@ const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) =>
               </div>
             </div>
           </Card>
-          );
-        })}
+        ))}
 
         {info.obs && (
-          <div className="mt-6 bg-gray-800 text-gray-50 rounded-xl p-4 flex gap-3 shadow-lg">
+          <div className="mt-4 bg-gray-800 text-gray-50 rounded-xl p-4 flex gap-3 shadow-lg">
             <Info className="text-gray-400 shrink-0 mt-0.5" size={20} />
             <div>
-              <h4 className="font-bold text-white text-sm uppercase tracking-wider mb-1">Observações Práticas</h4>
+              <h4 className="font-bold text-white text-sm uppercase tracking-wider mb-1">Dica de Logística</h4>
               <p className="text-gray-300 text-[15px] leading-relaxed whitespace-pre-line">{info.obs}</p>
+            </div>
+          </div>
+        )}
+
+        <div className={`mt-2 border rounded-xl p-4 ${info.reservas && info.reservas.length > 0 ? 'bg-rose-50 border-rose-200' : 'bg-emerald-50 border-emerald-200'}`}>
+          <h4 className={`font-bold text-sm flex items-center gap-2 mb-2 ${info.reservas && info.reservas.length > 0 ? 'text-rose-900' : 'text-emerald-900'}`}>
+            <Ticket size={16} /> 
+            {info.reservas && info.reservas.length > 0 ? 'Reservas Necessárias' : 'Dia Livre'}
+          </h4>
+          
+          {info.reservas && info.reservas.length > 0 ? (
+            <ul className="list-disc list-inside text-rose-800 text-sm space-y-1">
+              {info.reservas.map((res, i) => (
+                <li key={i}>{res}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-emerald-800 text-sm italic">Nenhuma reserva obrigatória ou burocracia para hoje. Aproveitem a espontaneidade!</p>
+          )}
+        </div>
+
+        {info.locais && (
+          <div className="mt-2 bg-sky-50 border border-sky-100 rounded-xl p-4">
+            <h4 className="font-bold text-sky-900 text-sm flex items-center gap-2 mb-3">
+              <Search size={16} /> Verifique no Google Maps hoje:
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {info.locais.map((local, i) => (
+                <span key={i} className="bg-white border border-sky-200 text-sky-800 text-xs px-3 py-1 rounded-full font-medium shadow-sm">
+                  {local}
+                </span>
+              ))}
             </div>
           </div>
         )}
@@ -415,14 +533,83 @@ const ViewDiaDetalhe = ({ dia, onBack }: { dia: number; onBack: () => void }) =>
   );
 };
 
-// --- APP PRINCIPAL ---
+const ViewEspanhol = () => (
+  <div className="space-y-6 pb-20 animate-fade-in">
+    <div className="bg-purple-50 rounded-xl p-4 mb-6 border border-purple-100 flex items-center gap-4">
+      <Languages className="text-purple-500 shrink-0" size={32} />
+      <div>
+        <h3 className="font-bold text-purple-900">Espanhol de Sobrevivência</h3>
+        <p className="text-sm text-purple-700">Frases úteis para não passar aperto. Tente arriscar, os portenhos adoram!</p>
+      </div>
+    </div>
+
+    <section>
+      <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+        <MessageCircle className="text-purple-600" size={20} /> Saudações
+      </h2>
+      <Card className="p-0 overflow-hidden">
+        <ul className="divide-y divide-gray-100">
+          <li className="p-3 bg-white">
+            <strong className="block text-gray-900">Olá / Bom dia / Boa tarde / Boa noite</strong>
+            <span className="text-purple-700 text-sm italic">"¡Hola! / Buenos días / Buenas tardes / Buenas noches"</span>
+          </li>
+          <li className="p-3 bg-gray-50">
+            <strong className="block text-gray-900">Por favor / Obrigado(a) / Desculpe</strong>
+            <span className="text-purple-700 text-sm italic">"Por favor / Gracias / Perdón (ou Disculpe)"</span>
+          </li>
+        </ul>
+      </Card>
+    </section>
+
+    <section>
+      <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+        <Utensils className="text-orange-500" size={20} /> Restaurantes
+      </h2>
+      <Card className="p-0 overflow-hidden">
+        <ul className="divide-y divide-gray-100">
+          <li className="p-3 bg-white">
+            <strong className="block text-gray-900">Uma mesa para dois, por favor.</strong>
+            <span className="text-purple-700 text-sm italic">"Una mesa para dos, por favor."</span>
+          </li>
+          <li className="p-3 bg-gray-50">
+            <strong className="block text-gray-900">Ponto da carne: Mal passada / Ao Ponto / Bem passada</strong>
+            <span className="text-purple-700 text-sm italic">"Jugoso / A punto / Bien cocido"</span>
+            <p className="text-xs text-gray-500 mt-1">* Dica: Na Argentina, a carne 'ao punto' é bem rosada (quase vermelha) no meio.</p>
+          </li>
+          <li className="p-3 bg-white">
+            <strong className="block text-gray-900">A conta, por favor. Aceita dinheiro?</strong>
+            <span className="text-purple-700 text-sm italic">"La cuenta, por favor. ¿Aceptan efectivo?"</span>
+          </li>
+        </ul>
+      </Card>
+    </section>
+
+    <section>
+      <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+        <AlertCircle className="text-rose-500" size={20} /> Imigração
+      </h2>
+      <Card className="p-4 bg-rose-50 border-rose-100">
+        <ul className="space-y-3">
+          <li>
+            <strong className="block text-rose-900 text-sm">"¿Cuál es el motivo de su viaje?"</strong>
+            <span className="text-rose-700 text-sm italic block">R: Turismo. Lua de mel. (Luna de miel)</span>
+          </li>
+          <li>
+            <strong className="block text-rose-900 text-sm">"¿Dónde se va a hospedar?"</strong>
+            <span className="text-rose-700 text-sm italic block">R: En un Airbnb en Retiro. (Mostre o app).</span>
+          </li>
+        </ul>
+      </Card>
+    </section>
+  </div>
+);
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('roteiro');
-  const [selectedDay, setSelectedDay] = useState<number | null>(null);
+  const [selectedDay, setSelectedDay] = useState(null);
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans max-w-2xl mx-auto shadow-2xl relative">
-      {/* Header Fixo */}
       <header className="bg-rose-700 text-white p-5 sticky top-0 z-10 shadow-md">
         <div className="flex items-center gap-3">
           <MapPin size={28} className="text-rose-200" />
@@ -433,48 +620,26 @@ export default function App() {
         </div>
       </header>
 
-      {/* Conteúdo */}
-      <main className="p-4 md:p-6">
+      <main className="p-4 md:p-6 pb-24">
+        {activeTab === 'observacoes' && <ViewObservacoes />}
         {activeTab === 'checklist' && <ViewChecklist />}
-        {activeTab === 'guia' && <ViewGuia />}
-        
-        {activeTab === 'roteiro' && !selectedDay && (
-          <ViewRoteiroList onSelectDay={setSelectedDay} />
-        )}
-
-        {activeTab === 'roteiro' && selectedDay && (
-          <ViewDiaDetalhe 
-            dia={selectedDay} 
-            onBack={() => setSelectedDay(null)} 
-          />
-        )}
+        {activeTab === 'espanhol' && <ViewEspanhol />}
+        {activeTab === 'roteiro' && !selectedDay && <ViewRoteiroList onSelectDay={setSelectedDay} />}
+        {activeTab === 'roteiro' && selectedDay && <ViewDiaDetalhe dia={selectedDay} onBack={() => setSelectedDay(null)} />}
       </main>
 
-      {/* Navegação Inferior Fixa */}
-      <nav className="fixed bottom-0 w-full max-w-2xl bg-white border-t border-gray-200 flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-20">
-        <TabButton 
-          active={activeTab === 'roteiro'} 
-          onClick={() => { setActiveTab('roteiro'); setSelectedDay(null); }}
-          icon={Map}
-          label="Roteiro"
-        />
-        <TabButton 
-          active={activeTab === 'guia'} 
-          onClick={() => { setActiveTab('guia'); setSelectedDay(null); }}
-          icon={Info}
-          label="Observações Adicionais"
-        />
-        <TabButton active={activeTab === 'checklist'} onClick={() => { setActiveTab('checklist'); setSelectedDay(null); }} icon={ListTodo} label="Afazeres" />
+      <nav className="fixed bottom-0 w-full max-w-2xl bg-white border-t border-gray-200 flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-20 overflow-x-auto">
+        <div className="flex w-full min-w-[320px]">
+          <TabButton active={activeTab === 'roteiro'} onClick={() => { setActiveTab('roteiro'); setSelectedDay(null); }} icon={Map} label="Roteiro" />
+          <TabButton active={activeTab === 'observacoes'} onClick={() => { setActiveTab('observacoes'); setSelectedDay(null); }} icon={Info} label="Obs Extras" />
+          <TabButton active={activeTab === 'checklist'} onClick={() => { setActiveTab('checklist'); setSelectedDay(null); }} icon={ListChecks} label="Mala" />
+          <TabButton active={activeTab === 'espanhol'} onClick={() => { setActiveTab('espanhol'); setSelectedDay(null); }} icon={Languages} label="Espanhol" />
+        </div>
       </nav>
 
       <style dangerouslySetInnerHTML={{__html: `
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out forwards;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(5px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
       `}} />
     </div>
   );
